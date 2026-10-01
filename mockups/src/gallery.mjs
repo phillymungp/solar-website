@@ -58,6 +58,8 @@ const html = `<title>Solex Solar Mockups</title>
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121613;--surface:#1B211D;--surface-2:#232B26;--ink:#ECEFE9;--ink-2:#C5CCC6;--muted:#8F9A92;--line:#2E3732;--accent:#F2B13A;--accent-ink:#121613;--link:#8CD1A8;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#121613;--surface:#1B211D;--surface-2:#232B26;--ink:#ECEFE9;--ink-2:#C5CCC6;--muted:#8F9A92;--line:#2E3732;--accent:#F2B13A;--accent-ink:#121613;--link:#8CD1A8;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;margin:0;padding-block:0 48px}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
 h1,h2,h3{font-family:var(--font-display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.02em}
@@ -90,7 +92,8 @@ a{color:var(--link)}
 .shots figure{margin:0;display:grid;gap:6px;min-width:0}
 .shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;max-width:100%}
 .shots figcaption{font-size:.82rem;color:var(--muted)}
-.device{width:100%}
+.dir>*,.preview>*,.stage>*{min-width:0}
+.device{width:100%;min-width:0;max-width:100%;overflow:hidden}
 .device .frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff;margin-inline:auto}
 .device iframe{border:0;transform-origin:top left;display:block;background:#fff}
 .device.desktop .frame{width:100%}
