@@ -1,0 +1,47 @@
+[
+  {
+    "id": "a",
+    "name": "Straight Talk",
+    "summary": "Navy and amber, blunt headlines, qualifications up front. The site of two tradesmen who own the company.",
+    "why": "Ecoaim and Fort Energy, the two most copyable small-firm sites in the research, win trust with a dense qualifications strip, a timed process and the founders in view, not with a portfolio. This direction leans fully into that: the founders are on the homepage, every badge is explained, and the two routes (buy or Solex PPA) sit side by side under the hero.",
+    "persona": "Owner-managers and farm or factory bosses who distrust sales companies and want to know who is turning up.",
+    "borrowed": "Ecoaim utility bar and process page; Excel Energy page set and explained accreditations; Fort Energy trust block.",
+    "risk": "The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent."
+  },
+  {
+    "id": "b",
+    "name": "The Funder",
+    "summary": "Quiet, numbers-led and serif. Reads like a term sheet from a firm that funds its own systems.",
+    "why": "The self-funded PPA is the one thing no comparable small installer offers, and the research found the clearest PPA pages (Spirit Energy, Eden Sustainable, Solar X) win on worked examples and plain terms. This direction puts an illustrative term sheet in the hero and a comparison table on the homepage, so the financial offer is the design.",
+    "persona": "Finance directors and owners who will decide on the numbers, and who need to believe a two-person company can fund a PPA.",
+    "borrowed": "Spirit Energy finance-page structure; Eden Sustainable PPA page order; Geo Green Power calm layout and tax-relief framing; Solar X worked example with stated assumptions.",
+    "risk": "Can feel corporate for a two-brother firm. The about page and photography have to carry the human side."
+  },
+  {
+    "id": "c",
+    "name": "Engineering Grid",
+    "summary": "Dark slate, amber, monospace data and a schematic in the hero. The electrician’s answer to the sales-company solar site.",
+    "why": "Buyer guides in the research say post-commissioning support and technical rigour are the most predictive signals of installer quality, and SurgePV argues facilities buyers want an operating place, not an empty roof polygon. Both GB NRG and EvoEnergy prove a dark, technical look reads as serious in the UK. This direction turns the founders’ trade knowledge (G99, BS 7671, string testing) into the brand, which is credibility a new firm can show on day one.",
+    "persona": "Facilities, engineering and operations managers who buy on competence, standards and numbers.",
+    "borrowed": "GB NRG dark palette and education-first nav; EvoEnergy dark hero; Solar X engineering byline and stated assumptions; Spirit Energy PPA flow diagram.",
+    "risk": "Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly."
+  },
+  {
+    "id": "d",
+    "name": "Sunline",
+    "summary": "Warm, rounded and recognisable: a yellow sunline arc runs through every page. The family-business direction.",
+    "why": "Eden Sustainable is the only UK site in the research with a brand device strong enough to be recognised without photography, and Mouthy Marketing’s UK critique is that solar sites are all drone shots with no people. This direction gives Solex a shape it owns before it has a single project photo, puts the two brothers at the centre, and keeps the PPA simple: we fit it, we own it, you pay less per kWh.",
+    "persona": "SME owners, farmers, sports clubs and schools: people who want a local firm they can picture, not a corporate.",
+    "borrowed": "Eden Sustainable brand arc and PPA explainer; Select Electrical PPA page with FAQs; Todae feasibility-check CTA; Ecoaim commercial/domestic clarity (here, commercial only).",
+    "risk": "The friendliest direction can read as domestic. The commercial-only line and the 30 to 200 kW range must stay prominent."
+  },
+  {
+    "id": "e",
+    "name": "Check Your Roof",
+    "summary": "Light, product-like and conversion-first. The homepage opens with a three-question checker that gives an indicative answer on the spot.",
+    "why": "The research found dedicated, one-decision pages convert several times better than brochure homepages, that cutting a form to three fields lifted completions by 145% in one solar case, and that Absolar’s address-only \"Check my building\" is the lowest-friction first step in the UK sample. Because Solex only wants 30 to 200 kW sites with daytime load, a checker that qualifies the lead is honest as well as effective, and it works with no portfolio at all.",
+    "persona": "Busy owners and managers who want a quick, honest answer before they talk to anyone.",
+    "borrowed": "Absolar assessment-first hero; Solar X bill slider and stated assumptions; SunPeak navigation of writable pages; Smart Ease eligibility thresholds.",
+    "risk": "A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it."
+  }
+]
