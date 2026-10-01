@@ -9,6 +9,13 @@ export default {
   why: 'Ecoaim and Fort Energy, the two most copyable small-firm sites in the research, win trust with a dense qualifications strip, a timed process and the founders in view, not with a portfolio. This direction leans fully into that: the founders are on the homepage, every badge is explained, and the two routes (buy or Solex PPA) sit side by side under the hero.',
   borrowed: 'Ecoaim utility bar and process page; Excel Energy page set and explained accreditations; Fort Energy trust block.',
   risk: 'The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent.',
+  group: 'approachable',
+  design: {
+    palette: 'Navy (#0E1E33) for the hero, header rule and footer, amber (#F2A900) only on the primary button and highlights, cool off-white (#F4F6F8) page. Amber on navy is the classic high-visibility pairing and reads as solar without a sun icon.',
+    type: 'Archivo 800 for headlines at 40 to 62px with tight tracking; Source Sans 3 at 17px for body. A blunt grotesk over a very readable sans.',
+    layout: 'Utility bar with qualifications, photo hero with a “who you will deal with” card, trust strip overlapping the hero, then two route cards.',
+    eye: 'Direct and trustworthy. The visitor sees who they would be dealing with before they see a price.',
+  },
   fonts: 'https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap',
   headerCta: 'Book a free site survey',
   logo,

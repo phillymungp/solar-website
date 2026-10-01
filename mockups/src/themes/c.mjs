@@ -24,6 +24,13 @@ export default {
   why: 'Buyer guides in the research say post-commissioning support and technical rigour are the most predictive signals of installer quality, and SurgePV argues facilities buyers want an operating place, not an empty roof polygon. Both GB NRG and EvoEnergy prove a dark, technical look reads as serious in the UK. This direction turns the founders’ trade knowledge (G99, BS 7671, string testing) into the brand, which is credibility a new firm can show on day one.',
   borrowed: 'GB NRG dark palette and education-first nav; EvoEnergy dark hero; Solar X engineering byline and stated assumptions; Spirit Energy PPA flow diagram.',
   risk: 'Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly.',
+  group: 'technical',
+  design: {
+    palette: 'Deep slate (#0B1420) background with faint amber graph-paper lines, amber (#FFB300) for the button and labels, light grey text (#E8EEF5) for about 14:1 contrast.',
+    type: 'IBM Plex Sans Condensed 700 uppercase headlines at 40 to 70px, IBM Plex Sans 17px body, IBM Plex Mono for labels and data. An engineering family with a mono for numbers.',
+    layout: 'Schematic in the hero, spec strip beneath, a four-step PPA flow with arrows, mono-numbered tables.',
+    eye: 'Serious and technical. It tells an engineer that the people behind it read standards.',
+  },
   fonts: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap',
   headerCta: 'Book a site survey',
   logo,

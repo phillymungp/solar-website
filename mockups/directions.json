@@ -2,46 +2,321 @@
   {
     "id": "a",
     "name": "Straight Talk",
+    "group": "approachable",
     "summary": "Navy and amber, blunt headlines, qualifications up front. The site of two tradesmen who own the company.",
     "why": "Ecoaim and Fort Energy, the two most copyable small-firm sites in the research, win trust with a dense qualifications strip, a timed process and the founders in view, not with a portfolio. This direction leans fully into that: the founders are on the homepage, every badge is explained, and the two routes (buy or Solex PPA) sit side by side under the hero.",
     "persona": "Owner-managers and farm or factory bosses who distrust sales companies and want to know who is turning up.",
     "borrowed": "Ecoaim utility bar and process page; Excel Energy page set and explained accreditations; Fort Energy trust block.",
-    "risk": "The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent."
+    "risk": "The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent.",
+    "design": {
+      "palette": "Navy (#0E1E33) for the hero, header rule and footer, amber (#F2A900) only on the primary button and highlights, cool off-white (#F4F6F8) page. Amber on navy is the classic high-visibility pairing and reads as solar without a sun icon.",
+      "type": "Archivo 800 for headlines at 40 to 62px with tight tracking; Source Sans 3 at 17px for body. A blunt grotesk over a very readable sans.",
+      "layout": "Utility bar with qualifications, photo hero with a “who you will deal with” card, trust strip overlapping the hero, then two route cards.",
+      "eye": "Direct and trustworthy. The visitor sees who they would be dealing with before they see a price."
+    }
   },
   {
     "id": "b",
     "name": "The Funder",
+    "group": "trust",
     "summary": "Quiet, numbers-led and serif. Reads like a term sheet from a firm that funds its own systems.",
     "why": "The self-funded PPA is the one thing no comparable small installer offers, and the research found the clearest PPA pages (Spirit Energy, Eden Sustainable, Solar X) win on worked examples and plain terms. This direction puts an illustrative term sheet in the hero and a comparison table on the homepage, so the financial offer is the design.",
     "persona": "Finance directors and owners who will decide on the numbers, and who need to believe a two-person company can fund a PPA.",
     "borrowed": "Spirit Energy finance-page structure; Eden Sustainable PPA page order; Geo Green Power calm layout and tax-relief framing; Solar X worked example with stated assumptions.",
-    "risk": "Can feel corporate for a two-brother firm. The about page and photography have to carry the human side."
+    "risk": "Can feel corporate for a two-brother firm. The about page and photography have to carry the human side.",
+    "design": {
+      "palette": "Paper white (#F7F8F6), forest green (#124734) for type and buttons, gold (#C8A24A) as a thin highlight. Green and gold read as banking and land, which suits a company funding its own systems.",
+      "type": "Newsreader, a high-contrast serif, at 500 for headlines up to 70px with italic emphasis; Figtree 17px body. Serif for gravity, sans for forms and tables.",
+      "layout": "Headline left, an illustrative term sheet right, a four-fact rule line beneath, then a comparison table instead of cards.",
+      "eye": "Looks like a document a finance director would file. Calm, numerate, credible."
+    }
   },
   {
     "id": "c",
     "name": "Engineering Grid",
+    "group": "technical",
     "summary": "Dark slate, amber, monospace data and a schematic in the hero. The electrician’s answer to the sales-company solar site.",
     "why": "Buyer guides in the research say post-commissioning support and technical rigour are the most predictive signals of installer quality, and SurgePV argues facilities buyers want an operating place, not an empty roof polygon. Both GB NRG and EvoEnergy prove a dark, technical look reads as serious in the UK. This direction turns the founders’ trade knowledge (G99, BS 7671, string testing) into the brand, which is credibility a new firm can show on day one.",
     "persona": "Facilities, engineering and operations managers who buy on competence, standards and numbers.",
     "borrowed": "GB NRG dark palette and education-first nav; EvoEnergy dark hero; Solar X engineering byline and stated assumptions; Spirit Energy PPA flow diagram.",
-    "risk": "Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly."
+    "risk": "Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly.",
+    "design": {
+      "palette": "Deep slate (#0B1420) background with faint amber graph-paper lines, amber (#FFB300) for the button and labels, light grey text (#E8EEF5) for about 14:1 contrast.",
+      "type": "IBM Plex Sans Condensed 700 uppercase headlines at 40 to 70px, IBM Plex Sans 17px body, IBM Plex Mono for labels and data. An engineering family with a mono for numbers.",
+      "layout": "Schematic in the hero, spec strip beneath, a four-step PPA flow with arrows, mono-numbered tables.",
+      "eye": "Serious and technical. It tells an engineer that the people behind it read standards."
+    }
   },
   {
     "id": "d",
     "name": "Sunline",
+    "group": "approachable",
     "summary": "Warm, rounded and recognisable: a yellow sunline arc runs through every page. The family-business direction.",
     "why": "Eden Sustainable is the only UK site in the research with a brand device strong enough to be recognised without photography, and Mouthy Marketing’s UK critique is that solar sites are all drone shots with no people. This direction gives Solex a shape it owns before it has a single project photo, puts the two brothers at the centre, and keeps the PPA simple: we fit it, we own it, you pay less per kWh.",
     "persona": "SME owners, farmers, sports clubs and schools: people who want a local firm they can picture, not a corporate.",
-    "borrowed": "Eden Sustainable brand arc and PPA explainer; Select Electrical PPA page with FAQs; Todae feasibility-check CTA; Ecoaim commercial/domestic clarity (here, commercial only).",
-    "risk": "The friendliest direction can read as domestic. The commercial-only line and the 30 to 200 kW range must stay prominent."
+    "borrowed": "Eden Sustainable brand arc and PPA explainer; Zenergi arch device; Select Electrical PPA page with FAQs; Todae feasibility-check CTA.",
+    "risk": "The friendliest direction can read as domestic. The commercial-only line and the 30 to 200 kW range must stay prominent.",
+    "design": {
+      "palette": "White with sky tint (#F1F6FC) bands, deep blue (#15346B) type, sun yellow (#FFC83D) for the arc device and the primary button with dark text.",
+      "type": "Sora 700 headlines at 40 to 60px with a yellow highlight stroke, Nunito Sans 17px body. Geometric headline over a soft, rounded body face.",
+      "layout": "A yellow arc sweeps under the hero and recurs as a divider and in the footer; photo in an organic blob; three-tile PPA strip.",
+      "eye": "Warm and recognisable. The arc is memorable before a single project photo exists."
+    }
   },
   {
     "id": "e",
     "name": "Check Your Roof",
+    "group": "conversion",
     "summary": "Light, product-like and conversion-first. The homepage opens with a three-question checker that gives an indicative answer on the spot.",
     "why": "The research found dedicated, one-decision pages convert several times better than brochure homepages, that cutting a form to three fields lifted completions by 145% in one solar case, and that Absolar’s address-only \"Check my building\" is the lowest-friction first step in the UK sample. Because Solex only wants 30 to 200 kW sites with daytime load, a checker that qualifies the lead is honest as well as effective, and it works with no portfolio at all.",
     "persona": "Busy owners and managers who want a quick, honest answer before they talk to anyone.",
     "borrowed": "Absolar assessment-first hero; Solar X bill slider and stated assumptions; SunPeak navigation of writable pages; Smart Ease eligibility thresholds.",
-    "risk": "A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it."
+    "risk": "A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it.",
+    "design": {
+      "palette": "White with a pale grey-blue (#F2F5FA) hero, ink (#0E1B2E) type, electric blue (#1F5EFF) for the button and the checker’s selected state.",
+      "type": "Manrope throughout: 800 headlines at 36 to 58px, 400 to 600 body at 17px. One family keeps a tool-like page consistent.",
+      "layout": "Headline left, a three-question checker right with a live indicative result, then “what you get back” in three cards.",
+      "eye": "Feels like a useful tool rather than a brochure. The visitor gets an answer before they give an email address."
+    }
+  },
+  {
+    "id": "f",
+    "name": "Friendly Teal",
+    "group": "approachable",
+    "summary": "Rounded type, teal and coral, three honest numbers in the hero. The friendliest direction that still looks like a business.",
+    "why": "Octopus Energy changed what a UK energy brand can look like: warm, rounded, plain-spoken, and trusted by businesses as well as households. This borrows that warmth without the pink and the illustrations, so it reads as a small firm you would call rather than a utility.",
+    "persona": "Owner-managers and office managers who are put off by corporate energy sites and sales-y solar sites alike.",
+    "borrowed": "Octopus Energy tone and rounded type; Fort Energy outcome stats; Ecoaim plain-English PPA line.",
+    "risk": "Rounded type can read as consumer. The 30 to 200 kW line and the “commercial only” chip must stay in the hero.",
+    "design": {
+      "palette": "Teal (#0F766E) as the brand colour on white, coral (#FF6B4A) reserved for the one primary button, mint-grey (#F3F8F7) bands. Dark teal text instead of black keeps it soft without losing contrast (about 11:1).",
+      "type": "Nunito for everything: 800 for headlines at 44 to 60px with tight tracking, 400 at 17px for body with 1.6 line height. One rounded family keeps it friendly and consistent.",
+      "layout": "Left-aligned hero with three number cards instead of a photo, so nothing depends on photography. Big radii (16 and 24px) and soft bands.",
+      "eye": "A visitor sees a friendly company, a clear offer and three numbers that answer “what is in it for me” before scrolling."
+    }
+  },
+  {
+    "id": "g",
+    "name": "Price Up Front",
+    "group": "conversion",
+    "summary": "Navy and green, prices in the hero, three steps and a reviews strip. The BOXT and Heatable model applied to commercial solar.",
+    "why": "Heatable and BOXT took a trade (boiler installation) that used to hide its prices and built market leaders on “see your price now, fixed, no surveyor visit”. Commercial solar cannot be priced online exactly, but publishing indicative prices for 30, 50, 100 and 200 kW, and £0 on a PPA, removes the biggest reason people do not enquire.",
+    "persona": "Owners who hate being quoted “call us for a price”. They want to know roughly what it costs before they pick up the phone.",
+    "borrowed": "BOXT navy hero with white card and Trustpilot line; Heatable “from £” product tiles; Excel Energy calculator; Smart Ease eligibility thresholds.",
+    "risk": "Published prices must be kept current and clearly labelled “from”, or they become a complaint.",
+    "design": {
+      "palette": "Navy (#0B2545) for type and headers, green (#1E8A5B) only on buttons, cool grey (#F5F7FA) background. Green signals “go” and money; navy keeps it serious. Both pass AA contrast on white.",
+      "type": "Outfit throughout: 700 headlines at 40 to 56px, body 17px at 400. Geometric but not childish; numbers line up cleanly in price cards.",
+      "layout": "Hero carries a four-card price guide. Reviews strip (placeholder until real reviews exist) and a three-step strip directly under it, the pattern that converts on trades sites.",
+      "eye": "A visitor sees prices immediately, understands the process in three steps, and the enquiry no longer feels like a commitment."
+    }
+  },
+  {
+    "id": "h",
+    "name": "Stone & Green",
+    "group": "premium",
+    "summary": "Stone neutrals, deep green type, one big photograph and a lot of air. The Scandinavian premium look.",
+    "why": "Aira sells heat pumps with the restraint of a furniture brand: a single photograph, a quiet palette and large, light type. Buyers at the top of the market read that calm as competence. Solex can borrow the discipline (one photo, generous spacing, no badges shouting) and still state the offer plainly.",
+    "persona": "Hotels, head offices, private schools and premium brands who judge a supplier by how considered everything looks.",
+    "borrowed": "Aira composition and neutrals; Geo Green Power calm hero; REC Group product photography treatment.",
+    "risk": "Looks expensive. Fine for premium clients, wrong for a farm or a tyre depot. Needs one strong photograph at launch.",
+    "design": {
+      "palette": "Warm stone (#F2EFE9) background, deep green (#1F3A2E) for all type and the single button, olive (#7C8C4D) for small details. No bright accent at all; the photograph supplies colour.",
+      "type": "Instrument Sans at 500 for headlines up to 64px with slight negative tracking, 400 at 17px body with 1.65 line height. Medium weight instead of bold keeps it calm.",
+      "layout": "Headline centred above one wide photo. Three plain text columns instead of cards. Rules, not boxes. Sections are tall with lots of white space.",
+      "eye": "Feels established and unhurried. The visitor is not sold to; they are shown."
+    }
+  },
+  {
+    "id": "i",
+    "name": "Big Type",
+    "group": "bold",
+    "summary": "One giant headline, black on white, orange only on the button. The Enphase approach: say one thing, very large.",
+    "why": "Enphase, a component manufacturer, outsells rivals partly because its site says one thing at a time in enormous type with a single orange action. Oversized typography is the dominant 2026 trend precisely because it reads instantly on phones. For a small firm it also costs nothing: no photography, no illustration, just words set well.",
+    "persona": "Anyone skimming on a phone. Decision-makers who want the point in three seconds.",
+    "borrowed": "GoCardless and Wise oversized centred headlines; Enphase single-orange-action discipline; the “one decision per page” rule from the research.",
+    "risk": "Big type leaves less room for nuance. The PPA details must be one scroll away, not three.",
+    "design": {
+      "palette": "White, near-black (#111) and one orange (#F26B1D) used only on the primary button and a few highlights, with dark text on the orange for contrast (about 7:1).",
+      "type": "Hanken Grotesk 800 headlines from 44px on phones to 90px on desktop, tracking tightened to -0.04em; body 18px for easy reading. Two sizes do most of the work.",
+      "layout": "Centred hero with one button, then a full-width photo strip, then a four-stat band. Everything below is wide, simple rows.",
+      "eye": "The visitor cannot miss the message. It feels confident, modern and uncluttered."
+    }
+  },
+  {
+    "id": "j",
+    "name": "Black & Signal",
+    "group": "premium",
+    "summary": "Black hero with a photograph, white body, signal orange. The 1KOMMA5° look: a solar brand that feels like a tech brand.",
+    "why": "1KOMMA5° built a pan-European solar brand in four years on a split layout: a dark, photographic hero that feels premium, then a light, factual body. The research found dark heroes read as serious in the UK (GB NRG, EvoEnergy) but dark body text tires readers, so this uses dark only where it sets the mood.",
+    "persona": "Younger owners and directors who buy from brands, and businesses that want their sustainability story to look modern.",
+    "borrowed": "1KOMMA5° dark-to-light structure; Wise Business and Inspired dark photographic heroes; EvoEnergy hero; Solar X comparison table.",
+    "risk": "Needs a good photograph in the hero. Placeholder for now; replace it first.",
+    "design": {
+      "palette": "Near-black (#0D0D0D) hero and footer, white body, signal orange (#FF4F1F) for the primary button with black text, light grey (#F4F4F2) bands.",
+      "type": "Schibsted Grotesk, a newspaper grotesk: 800 for headlines at 44 to 72px, 400 at 17px body. Crisp and slightly editorial.",
+      "layout": "Dark hero split 55/45 between headline and photo, with a standards ticker along the bottom edge. Light body uses a comparison table and simple cards.",
+      "eye": "Premium and current. The first screen feels like a brand film; the second screen gets down to numbers."
+    }
+  },
+  {
+    "id": "k",
+    "name": "Editorial Serif",
+    "group": "trust",
+    "summary": "Serif headlines, a 20-year cost chart in the hero, warm white paper. Reads like a well-made guide rather than an advert.",
+    "why": "Sunsave sells solar subscriptions on an editorial site: serif headlines, long clear explanations and charts that show the money over time. Readers who distrust glossy sales pages trust a page that looks like it was written to inform. Solex’s PPA is a 20-year decision, which is exactly what a chart can explain and a slogan cannot.",
+    "persona": "Careful buyers who read before they call: finance directors, bursars, farm partnerships.",
+    "borrowed": "Sunsave’s plain-English subscription explanation and trust strip; Spirit Energy worked examples; Ecoaim PPA article; editorial serif from the Guardian-style long-read pattern.",
+    "risk": "More reading on the first screen than any other direction. The chart must be labelled honestly as illustrative.",
+    "design": {
+      "palette": "Warm paper (#FBF9F4) background, navy (#101F3A) type and buttons, a single sun-yellow (#F5B700) used in the chart and small highlights. Warm paper with cool navy avoids the beige-and-terracotta look.",
+      "type": "Lora (a readable serif) at 600 for headlines, 40 to 60px; Work Sans 400 at 17px for body, 1.6 line height. Serif for authority, sans for legibility in tables and forms.",
+      "layout": "Hero splits headline and a drawn-to-scale chart. Lists use rules instead of cards. Wide measure kept under 70 characters.",
+      "eye": "Looks considered and honest. The chart does the persuading."
+    }
+  },
+  {
+    "id": "l",
+    "name": "Minimal Photo",
+    "group": "premium",
+    "summary": "Full-width photograph, light centred headline, two equal buttons. The Tesla approach: almost nothing on the page but the product.",
+    "why": "Tesla’s solar pages are the most imitated energy design in the world because they remove everything except a photograph, one line and two choices. It works when the photograph is excellent. For Solex it is the direction to grow into once the first installs are photographed; the placeholder shows the composition.",
+    "persona": "Visitors who already know they want solar and are choosing an installer on confidence and finish.",
+    "borrowed": "Tesla solar layout and restraint; Photon Energy person-on-roof hero; REC photography treatment.",
+    "risk": "Entirely dependent on photography and says little about the people. Weakest at launch, strongest after the first three projects.",
+    "design": {
+      "palette": "White and near-black (#171A20) only, with Tesla’s restrained blue (#3E6AE1) for the single primary button. Photography provides all colour.",
+      "type": "Figtree at 500 for headlines (not bold) at 40 to 64px, 400 at 16px body. Small uppercase navigation. Light weights signal confidence.",
+      "layout": "Edge-to-edge photo with the headline overlaid and two side-by-side buttons. Below, alternating photo and text rows, each with one message.",
+      "eye": "Calm, expensive, product-like. The visitor feels they are looking at a finished thing, not a pitch."
+    }
+  },
+  {
+    "id": "m",
+    "name": "Local Trades",
+    "group": "approachable",
+    "summary": "Green and white, phone number in the header, big tap targets, plain words. The best version of the local trade website.",
+    "why": "The trade sites that win locally (the better Checkatrade-era plumbers, electricians and roofers) share one thing: they make it effortless to call. Phone number top right, who you are speaking to, what it costs, when you can come. Nothing clever. This direction applies that to commercial solar with bigger type and clearer spacing than most trade sites manage.",
+    "persona": "Owner-managers, farmers and site managers who want a straight answer and a number to ring.",
+    "borrowed": "Checkatrade category chips and badge row; Hometree reviews strip; Ecoaim utility bar; Actismart (three electrician brothers) credibility stack.",
+    "risk": "Can look like every other trade site. The difference has to be the writing and the PPA.",
+    "design": {
+      "palette": "Green (#157A4A) as the brand colour on white, orange (#F08A24) for the one primary button with dark text, mint band (#F2F7F3). Green reads as safe and electrical (NICEIC-adjacent); orange is the call to action.",
+      "type": "Rubik, 700 headlines at 38 to 52px, body 18px at 400 with 1.6 line height: a size up from most sites, because the readers are often on a phone in a van or a yard.",
+      "layout": "Phone number and “Call Phil” in the header on every screen. Hero with a photo of the team, trust strip directly beneath, then the two routes. Buttons are 48px tall.",
+      "eye": "Instantly familiar: a local firm that looks competent and is easy to ring."
+    }
+  },
+  {
+    "id": "n",
+    "name": "Bank Clean",
+    "group": "trust",
+    "summary": "White, very legible, one teal accent and a Buy / PPA toggle in the hero. The clarity of a challenger bank applied to solar.",
+    "why": "Starling and Monzo made financial products feel simple by showing one comparison, in plain type, with lots of white space and one accent colour. A commercial solar decision is also a financial comparison: buy or PPA. Putting that comparison in the hero as a toggle turns the homepage into the decision tool.",
+    "persona": "Finance directors and owners who want to compare the two routes in ten seconds without reading.",
+    "borrowed": "GoCardless white, centred two-button hero; Starling’s single-accent discipline; Solar X comparison table; Smart Ease eligibility thresholds.",
+    "risk": "Very clean designs can feel generic. The toggle and the copy have to carry the personality.",
+    "design": {
+      "palette": "White, slate (#1C2B36) type, a single teal (#0B7F72) for buttons and highlights, pale grey-blue (#F5F7F9) bands. Teal passes AA with white text.",
+      "type": "DM Sans throughout: 700 headlines at 36 to 52px, body 16px at 400 with 1.6 line height. Smaller body than other directions, bank-style, but with more space around it.",
+      "layout": "Left headline, right toggle card. A sticky “Book a free site survey” bar on phones. Three plain columns, a comparison table, then cards.",
+      "eye": "Clear, trustworthy, modern. The visitor can answer “which route?” before scrolling."
+    }
+  },
+  {
+    "id": "o",
+    "name": "Blueprint",
+    "group": "technical",
+    "summary": "The engineering direction in daylight: white, blueprint blue, graph paper and the schematic, with easier reading than the dark version.",
+    "why": "Direction C proved the technical story works, but dark backgrounds reduce reading comfort for longer text and some buyers associate them with gaming or crypto. A blueprint treatment keeps the schematic, the monospace labels and the standards, on white, so the same competence reads as calm rather than edgy.",
+    "persona": "Facilities, engineering and operations managers, including the older ones who find dark sites hard to read.",
+    "borrowed": "Direction C structure; SunPeak process-led navigation; Hoare Lea engineering-consultancy restraint.",
+    "risk": "Blue-on-white is the most common corporate scheme. The graph paper and schematic are what keep it distinctive.",
+    "design": {
+      "palette": "White with faint blue graph-paper lines, blueprint blue (#1E4ED8) for buttons, labels and the schematic, slate (#0F172A) text, pale blue (#F3F6FB) bands.",
+      "type": "IBM Plex Sans Condensed 700 for uppercase headlines at 40 to 64px, IBM Plex Sans 17px body, IBM Plex Mono for labels and numbers. An engineering family with a mono for data.",
+      "layout": "Hero on graph paper with the schematic at right, spec strip beneath, four-step PPA flow, mono-numbered tables.",
+      "eye": "Precise and legible. It looks like it was made by people who read standards, which is the point."
+    }
+  },
+  {
+    "id": "p",
+    "name": "Photo Premium",
+    "group": "premium",
+    "summary": "Full-bleed photograph, serif headline, black and white, and a projects grid. What the site becomes once the first three installs are photographed.",
+    "why": "The research dropped the photo-led direction for launch because Solex has no usable photos. It belongs in the set anyway, as the target: the best installer sites (Photon, Joju, Onyx) are photo-led, and a site that is designed to receive real project photography from day one avoids a redesign later. The placeholders show the composition; the project tiles are labelled honestly.",
+    "persona": "Larger clients and architects who choose on evidence of finished work.",
+    "borrowed": "Photon Energy person-on-roof hero; Onyx Renewables project grid; DM Serif editorial headline.",
+    "risk": "Launching this with stock imagery would be a mistake. Build it, hold it until the first projects exist.",
+    "design": {
+      "palette": "Black and white only. No accent colour; the photographs and a thin underline carry emphasis. Buttons are solid black.",
+      "type": "DM Serif Display for headlines at 44 to 76px (a high-contrast serif that holds up over photographs), Albert Sans 17px body. The pairing signals craft.",
+      "layout": "Edge-to-edge photo with the headline bottom-left over a gradient, then a three-tile projects grid, then text sections with wide margins.",
+      "eye": "Looks like an established firm with work to show. Which is exactly why it has to wait for real photographs."
+    }
+  },
+  {
+    "id": "q",
+    "name": "Farm & Rural",
+    "group": "sector",
+    "summary": "Olive, straw and soil, a slab-serif headline and barn roofs. A sector-specific version aimed squarely at farms and rural businesses.",
+    "why": "Agriculture is the sector where 30 to 200 kW fits most naturally (barns, grain stores, milking parlours) and where buyers respond to vernacular, not corporate polish. Agricultural suppliers and rural insurers use earthy palettes and slab serifs for exactly that reason. A sector homepage can also be the template for other sector landing pages later.",
+    "persona": "Farmers, dairies, food processors, equestrian and rural estates with big shed roofs and daytime loads.",
+    "borrowed": "Veep Energy niche sector pages; Spirit Energy sector menu; NFU-style rural visual language.",
+    "risk": "It is a sector page, not a whole-company look, unless farms are going to be most of the business.",
+    "design": {
+      "palette": "Straw (#F4EFDF) background, soil (#2F2A1F) text, olive (#5F6F3A) brand colour, harvest gold (#D98E04) on the primary button with dark text. Earthy but still high contrast.",
+      "type": "Bitter (a slab serif) at 700 for headlines at 38 to 56px, Source Sans 3 at 17px body. Slab serifs read as sturdy and practical.",
+      "layout": "Hero with a wide barn-roof photograph and a bullet list of rural loads, then a three-tile strip of farm-specific benefits, then the standard sections.",
+      "eye": "Feels like it was made for a farm, not adapted for one. The visitor sees their own building type immediately."
+    }
+  },
+  {
+    "id": "r",
+    "name": "Corporate Blue",
+    "group": "trust",
+    "summary": "Royal blue, white and grey, service tiles with icons, stats and an accreditations strip. The conventional corporate layout, done cleanly.",
+    "why": "Custom Solar (Mitie), Vaillant and most facilities suppliers use the same blue-and-white template because procurement buyers trust what is familiar. The research found no design award here, only a lot of business. Including the conventional look lets the brothers compare “safe and familiar” against the more distinctive directions with their own eyes.",
+    "persona": "Facilities managers and procurement teams at larger companies who expect a supplier site to look like the ones they already deal with.",
+    "borrowed": "Custom Solar / Mitie structure; Vaillant service tiles; Excel Energy accreditations page.",
+    "risk": "Forgettable. It will not be remembered after the tab is closed, but it will not be mistrusted either.",
+    "design": {
+      "palette": "Royal blue (#0B4F9E) for headers and buttons, light blue (#00A3E0) for icons only, dark grey (#1F2933) text, light grey (#F2F5F9) bands. The most common B2B scheme in the UK.",
+      "type": "Open Sans throughout: 700 headlines at 34 to 48px, 16px body. Deliberately ordinary and highly readable.",
+      "layout": "Photo hero with overlaid headline, four service tiles with icons, a stat band, sectors, accreditations, FAQ, contact form. The order procurement teams expect.",
+      "eye": "Looks like an established supplier. Nothing surprises the visitor, which for some buyers is the point."
+    }
+  },
+  {
+    "id": "s",
+    "name": "Sunrise",
+    "group": "bold",
+    "summary": "A warm amber-to-orange hero, white cards, rounded corners. Optimistic and energetic, the colour of the product itself.",
+    "why": "Of the 2026 trends, the one that fits solar best is warmth: saturated, optimistic colour is back, and sunlight is the only gradient a solar company can use without it looking borrowed from a software start-up. Enphase and Sunrun both own orange; this uses amber to orange as a sunrise band and keeps everything else white and plain.",
+    "persona": "Owners who want their solar decision to feel positive and visible, hospitality, leisure and retail.",
+    "borrowed": "Kensa and Monzo Business orange-gradient heroes; Enphase orange discipline; Fort Energy outcome stats.",
+    "risk": "Gradients date quickly and can look consumer. Keep the gradient to the hero band only.",
+    "design": {
+      "palette": "Hero gradient from amber (#F59E0B) to deep orange (#EA580C) with white type over the darker end, white body, warm tint (#FFF7ED) bands, amber button with dark text (about 8:1 contrast).",
+      "type": "Plus Jakarta Sans: 800 headlines at 40 to 60px, 400 body at 17px. Rounded, contemporary, friendly without being soft.",
+      "layout": "Gradient hero with a white card holding the three key numbers, then three tiles, cards for systems, and the standard sections on white.",
+      "eye": "Warm and confident. The page feels like the product."
+    }
+  },
+  {
+    "id": "t",
+    "name": "Swiss Grid",
+    "group": "bold",
+    "summary": "Black, white and grey on a strict grid, with safety yellow as a marker. The architect’s version of a solar site.",
+    "why": "The Swiss style (strict grid, one sans, big numbers, one accent) is what engineering consultancies like Arup and Hoare Lea reach for when they want to look exact. Solex’s offer is unusually simple (two routes, four sizes, six steps), and a grid layout makes that simplicity visible. Yellow is used the way it is used on site: as a marker, not a colour scheme.",
+    "persona": "Architects, property developers and professional clients who respect precision and dislike decoration.",
+    "borrowed": "Arup and Hoare Lea restraint; Spirit Energy numbered finance structure; Onyx typographic hierarchy.",
+    "risk": "Austere. Some owner-managers will find it cold. It depends on copy and numbers being exactly right.",
+    "design": {
+      "palette": "White, black (#0A0A0A) and greys, with safety yellow (#FFD500) used only as a highlight bar and on the primary button with black text. Nothing else is coloured.",
+      "type": "Public Sans only: 700 headlines at 40 to 68px with tight tracking, 400 body at 17px, small uppercase labels with wide tracking. Tabular numerals everywhere.",
+      "layout": "Hero split between a headline and a numbered index of the offer (01 install, 02 PPA, 03 aftercare). Sections separated by single rules. Numbers lined up in columns.",
+      "eye": "Exact, serious, uncluttered. The eye goes straight to the numbers."
+    }
   }
 ]

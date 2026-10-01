@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
-/* Layout: a single column review board. Each direction is a card with a device stage, then the reasoning and the reference wall. */
+/* Layout: a single-column review board. Twenty treatment cards, each with a device stage and design notes, then the shortlist and two reference walls. */
 :root{--bg:#F6F7F4;--surface:#FFFFFF;--surface-2:#ECEFE8;--ink:#17201B;--ink-2:#3E4A43;--muted:#6B766F;--line:#D8DED6;--accent:#D98E04;--accent-ink:#17201B;--link:#1E5A3A;--font-display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;--font-body:"Albert Sans","Segoe UI",Arial,sans-serif;--radius:10px;--radius-lg:16px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121613;--surface:#1B211D;--surface-2:#232B26;--ink:#ECEFE9;--ink-2:#C5CCC6;--muted:#8F9A92;--line:#2E3732;--accent:#F2B13A;--accent-ink:#121613;--link:#8CD1A8;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#121613;--surface:#1B211D;--surface-2:#232B26;--ink:#ECEFE9;--ink-2:#C5CCC6;--muted:#8F9A92;--line:#2E3732;--accent:#F2B13A;--accent-ink:#121613;--link:#8CD1A8;color-scheme:dark}
@@ -18,16 +18,22 @@ h3{font-size:1.1rem;font-weight:700}
 p{margin:0}
 a{color:var(--link)}
 .top{padding-block:clamp(28px,5vw,56px) 18px;display:grid;gap:14px}
-.top .lede{font-size:1.1rem;color:var(--ink-2);max-width:68ch}
+.top .lede{font-size:1.1rem;color:var(--ink-2);max-width:70ch}
 .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
-.chips a{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem}
+.chips a{display:inline-block;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink);font-weight:600;font-size:.86rem}
 .chips a:hover{border-color:var(--accent)}
-.notice{display:grid;gap:6px;padding:14px 16px;border-radius:var(--radius);background:var(--surface-2);font-size:.92rem;color:var(--ink-2);max-width:70ch}
+.notice{display:grid;gap:6px;padding:14px 16px;border-radius:var(--radius);background:var(--surface-2);font-size:.92rem;color:var(--ink-2);max-width:72ch}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+@media (max-width:760px){.rules{grid-template-columns:minmax(0,1fr)}}
+.rules div{padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);font-size:.9rem;color:var(--ink-2);min-width:0}
+.rules b{display:block;color:var(--ink);margin-bottom:4px}
 .dir{display:grid;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(16px,2.5vw,28px);margin-top:22px}
+.dir>*,.preview>*,.stage>*{min-width:0}
 .dir-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}
 .dir-title{display:flex;gap:14px;align-items:flex-start;min-width:0}
 .letter{flex:none;width:48px;height:48px;border-radius:12px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.4rem}
-.sum{color:var(--ink-2);margin-top:4px;max-width:60ch}
+.tag{display:inline-block;font-family:var(--font-body);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;vertical-align:middle;margin-left:6px}
+.sum{color:var(--ink-2);margin-top:4px;max-width:64ch}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);color:var(--ink);background:var(--surface);cursor:pointer;font:inherit;font-weight:700}
 .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .preview{display:grid;gap:12px}
@@ -39,9 +45,8 @@ a{color:var(--link)}
 .shots{display:grid;grid-template-columns:3fr 1fr;gap:12px;align-items:start}
 @media (max-width:720px){.shots{grid-template-columns:minmax(0,1fr)}.ph-shot{max-width:280px}}
 .shots figure{margin:0;display:grid;gap:6px;min-width:0}
-.shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;max-width:100%}
+.shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block}
 .shots figcaption{font-size:.82rem;color:var(--muted)}
-.dir>*,.preview>*,.stage>*{min-width:0}
 .device{width:100%;min-width:0;max-width:100%;overflow:hidden}
 .device .frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff;margin-inline:auto}
 .device iframe{border:0;transform-origin:top left;display:block;background:#fff}
@@ -49,217 +54,569 @@ a{color:var(--link)}
 .device.phone .frame{width:min(100%,390px);border-radius:28px;border:6px solid #1a1a1a;box-shadow:0 20px 50px rgba(0,0,0,.2)}
 .pages{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
 .pages li a{display:inline-block;padding:6px 11px;border-radius:999px;background:var(--surface-2);text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:600}
-.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;margin:0;border-top:1px solid var(--line);padding-top:16px}
-@media (max-width:720px){.meta{grid-template-columns:minmax(0,1fr)}}
-.meta div{display:grid;gap:4px;min-width:0}
-.meta dt{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.meta dd{margin:0;color:var(--ink-2);font-size:.95rem}
+.design{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;margin:0;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:720px){.design{grid-template-columns:minmax(0,1fr)}}
+.design div{display:grid;gap:4px;min-width:0}
+.design dt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);display:inline-block;padding:2px 8px;border-radius:4px;font-weight:800;width:max-content}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .design dt{color:var(--accent-ink)}}
+.design dd{margin:0;color:var(--ink-2);font-size:.95rem}
+details.more{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface-2);padding:0 16px}
+details.more summary{cursor:pointer;padding:12px 0;font-weight:700;font-size:.95rem}
+details.more .meta{display:grid;gap:10px;padding-bottom:14px;font-size:.93rem;color:var(--ink-2)}
 .block{margin-top:40px;display:grid;gap:14px}
-.block .lede{color:var(--ink-2);max-width:70ch}
-.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--surface-2);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-tbody tr:last-child td{border-bottom:0}
-td:first-child{font-weight:700;min-width:200px}
-.dropped{display:grid;gap:10px;list-style:none;padding:0;margin:0}
-.dropped li{padding:14px 16px;border-left:4px solid var(--line);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;display:grid;gap:4px}
-.dropped b{font-family:var(--font-display)}
-.dropped span{color:var(--ink-2);font-size:.93rem}
+.block .lede{color:var(--ink-2);max-width:72ch}
+.short{display:grid;gap:10px;list-style:none;padding:0;margin:0}
+.short li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);align-items:start}
+.short .l{width:40px;height:40px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.1rem}
+.short b{font-family:var(--font-display);font-size:1.05rem}
+.short p{color:var(--ink-2);font-size:.93rem;margin-top:2px}
 .rec{padding:18px 20px;border-radius:var(--radius-lg);background:var(--surface-2);display:grid;gap:8px;border-left:5px solid var(--accent)}
-.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.ref{display:grid;gap:6px;min-width:0}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.ref{display:grid;gap:6px;min-width:0;text-decoration:none;color:inherit}
 .ref img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.ref .t{font-size:.85rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ref .t{font-size:.9rem;font-weight:700}
 .ref .u{font-size:.78rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ref .n{font-size:.86rem;color:var(--ink-2)}
 .refs-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
 .small{font-size:.85rem;color:var(--muted)}
-details.more{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:0 16px}
-details.more summary{cursor:pointer;padding:12px 0;font-weight:700}
-details.more > div{padding-bottom:14px}
+details.wall{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);padding:0 16px}
+details.wall summary{cursor:pointer;padding:14px 0;font-weight:700}
+details.wall>div{padding-bottom:16px;display:grid;gap:14px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <main class="wrap">
   <header class="top">
     <h1>Solex Solar Mockups</h1>
-    <p class="lede">Five complete website directions for Solex Solar: commercial rooftop solar from 30 to 200 kW, bought outright or on a PPA funded by Solex itself. Each one is a working six-page site. Open it and tap around, or switch to a live phone or desktop preview below.</p>
-    <ul class="chips"><li><a href="#dir-a">A · Straight Talk</a></li><li><a href="#dir-b">B · The Funder</a></li><li><a href="#dir-c">C · Engineering Grid</a></li><li><a href="#dir-d">D · Sunline</a></li><li><a href="#dir-e">E · Check Your Roof</a></li><li><a href="#why">Why these five</a></li><li><a href="#refs">Reference sites</a></li></ul>
-    <div class="notice"><strong>What is placeholder.</strong><span>Dashed boxes mark details still to confirm: region, phone, email, the second director’s name, PPA term and rate, company number. Photos are licensed stock standing in for Solex Solar’s own. Savings, costs and payback are modelled examples with the assumptions stated, not quotes.</span></div>
+    <p class="lede">Twenty homepage treatments for Solex Solar, each a working six-page site. The first five are the original directions; the fifteen that follow explore colour, type and layout more widely, borrowing from the best energy, trades and finance sites rather than only solar ones. Open any site and tap through, or use the live phone and desktop previews.</p>
+    <ul class="chips"><li><a href="#dir-a">A · Straight Talk</a></li><li><a href="#dir-b">B · The Funder</a></li><li><a href="#dir-c">C · Engineering Grid</a></li><li><a href="#dir-d">D · Sunline</a></li><li><a href="#dir-e">E · Check Your Roof</a></li><li><a href="#dir-f">F · Friendly Teal</a></li><li><a href="#dir-g">G · Price Up Front</a></li><li><a href="#dir-h">H · Stone &amp; Green</a></li><li><a href="#dir-i">I · Big Type</a></li><li><a href="#dir-j">J · Black &amp; Signal</a></li><li><a href="#dir-k">K · Editorial Serif</a></li><li><a href="#dir-l">L · Minimal Photo</a></li><li><a href="#dir-m">M · Local Trades</a></li><li><a href="#dir-n">N · Bank Clean</a></li><li><a href="#dir-o">O · Blueprint</a></li><li><a href="#dir-p">P · Photo Premium</a></li><li><a href="#dir-q">Q · Farm &amp; Rural</a></li><li><a href="#dir-r">R · Corporate Blue</a></li><li><a href="#dir-s">S · Sunrise</a></li><li><a href="#dir-t">T · Swiss Grid</a></li><li><a href="#shortlist">Designer’s shortlist</a></li><li><a href="#refs2">What is working out there</a></li><li><a href="#refs">Solar reference sites</a></li></ul>
+    <div class="notice"><strong>How every treatment was judged.</strong><span>Through the eyes of a commercial customer arriving cold: can they tell who you are, what you do (30 to 200 kW, buy or PPA), whether to trust you, and what to do next, inside five seconds, on a phone. Dashed boxes mark details still to confirm. Photos are licensed stock standing in for Solex Solar’s own. Figures are modelled examples with the assumptions stated.</span></div>
+    <div class="rules"><div><b>Colour</b>One brand colour, one action colour, neutrals for everything else. Body text at 4.5:1 contrast or better; buttons checked for contrast with their own text.</div><div><b>Type</b>At most two families. Body 16 to 18px with 1.5 to 1.65 line height; headlines 36 to 90px depending on the direction; 44px or taller tap targets.</div><div><b>Layout</b>One headline, one primary button, the offer in the first screen, trust signals in the second, and no carousels or autoplay.</div></div>
   </header>
   
 <section class="dir" id="dir-a">
   <div class="dir-head">
-    <div class="dir-title"><span class="letter">A</span><div><h2>Straight Talk</h2><p class="sum">Navy and amber, blunt headlines, qualifications up front. The site of two tradesmen who own the company.</p></div></div>
+    <div class="dir-title"><span class="letter">A</span><div><h2>Straight Talk <span class="tag">Approachable</span></h2><p class="sum">Navy and amber, blunt headlines, qualifications up front. The site of two tradesmen who own the company.</p></div></div>
     <div class="dir-actions"><a class="btn primary" href="a/index.html">Open the full site</a></div>
   </div>
   <div class="preview" data-dir="a">
-    <div class="seg" role="tablist" aria-label="Preview mode for direction A">
-      <button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button>
-      <button data-mode="phone" role="tab" aria-selected="false">Live phone</button>
-      <button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button>
-    </div>
+    <div class="seg" role="tablist" aria-label="Preview mode for A"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
     <div class="stage">
       <div class="shots" data-pane="shot">
-        <figure><img src="gallery/a-fold-desktop.jpg" alt="Direction A homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/a-index-desktop.jpg">full page</a></figcaption></figure>
-        <figure class="ph-shot"><img src="gallery/a-fold-mobile.jpg" alt="Direction A homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/a-index-mobile.jpg">full page</a></figcaption></figure>
+        <figure><img src="gallery/a-fold-desktop.jpg" alt="Straight Talk homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/a-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/a-fold-mobile.jpg" alt="Straight Talk homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/a-index-mobile.jpg">full page</a></figcaption></figure>
       </div>
-      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Direction A on a phone" data-src="a/index.html" loading="lazy"></iframe></div></div>
-      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Direction A on a desktop" data-src="a/index.html" loading="lazy"></iframe></div></div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Straight Talk on a phone" data-src="a/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Straight Talk on a desktop" data-src="a/index.html" loading="lazy"></iframe></div></div>
     </div>
     <ul class="pages"><li><a href="a/index.html">Home</a></li><li><a href="a/commercial-solar.html">Commercial solar</a></li><li><a href="a/ppa.html">Solar PPA</a></li><li><a href="a/sectors.html">Sectors</a></li><li><a href="a/about.html">About</a></li><li><a href="a/contact.html">Contact</a></li></ul>
   </div>
-  <dl class="meta">
-    <div><dt>Who it is for</dt><dd>Owner-managers and farm or factory bosses who distrust sales companies and want to know who is turning up.</dd></div>
-    <div><dt>Why it is on the list</dt><dd>Ecoaim and Fort Energy, the two most copyable small-firm sites in the research, win trust with a dense qualifications strip, a timed process and the founders in view, not with a portfolio. This direction leans fully into that: the founders are on the homepage, every badge is explained, and the two routes (buy or Solex PPA) sit side by side under the hero.</dd></div>
-    <div><dt>Borrowed from the research</dt><dd>Ecoaim utility bar and process page; Excel Energy page set and explained accreditations; Fort Energy trust block.</dd></div>
-    <div><dt>Risk to watch</dt><dd>The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent.</dd></div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Navy (#0E1E33) for the hero, header rule and footer, amber (#F2A900) only on the primary button and highlights, cool off-white (#F4F6F8) page. Amber on navy is the classic high-visibility pairing and reads as solar without a sun icon.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Archivo 800 for headlines at 40 to 62px with tight tracking; Source Sans 3 at 17px for body. A blunt grotesk over a very readable sans.</dd></div>
+    <div><dt>Layout</dt><dd>Utility bar with qualifications, photo hero with a “who you will deal with” card, trust strip overlapping the hero, then two route cards.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Direct and trustworthy. The visitor sees who they would be dealing with before they see a price.</dd></div>
   </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Owner-managers and farm or factory bosses who distrust sales companies and want to know who is turning up.</div><div><b>Why.</b> Ecoaim and Fort Energy, the two most copyable small-firm sites in the research, win trust with a dense qualifications strip, a timed process and the founders in view, not with a portfolio. This direction leans fully into that: the founders are on the homepage, every badge is explained, and the two routes (buy or Solex PPA) sit side by side under the hero.</div><div><b>Borrowed from.</b> Ecoaim utility bar and process page; Excel Energy page set and explained accreditations; Fort Energy trust block.</div><div><b>Risk.</b> The most conventional of the five. If Carbon 3 or local competitors use navy and yellow, it will need a different accent.</div></div></details>
 </section>
 <section class="dir" id="dir-b">
   <div class="dir-head">
-    <div class="dir-title"><span class="letter">B</span><div><h2>The Funder</h2><p class="sum">Quiet, numbers-led and serif. Reads like a term sheet from a firm that funds its own systems.</p></div></div>
+    <div class="dir-title"><span class="letter">B</span><div><h2>The Funder <span class="tag">Trust and numbers</span></h2><p class="sum">Quiet, numbers-led and serif. Reads like a term sheet from a firm that funds its own systems.</p></div></div>
     <div class="dir-actions"><a class="btn primary" href="b/index.html">Open the full site</a></div>
   </div>
   <div class="preview" data-dir="b">
-    <div class="seg" role="tablist" aria-label="Preview mode for direction B">
-      <button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button>
-      <button data-mode="phone" role="tab" aria-selected="false">Live phone</button>
-      <button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button>
-    </div>
+    <div class="seg" role="tablist" aria-label="Preview mode for B"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
     <div class="stage">
       <div class="shots" data-pane="shot">
-        <figure><img src="gallery/b-fold-desktop.jpg" alt="Direction B homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/b-index-desktop.jpg">full page</a></figcaption></figure>
-        <figure class="ph-shot"><img src="gallery/b-fold-mobile.jpg" alt="Direction B homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/b-index-mobile.jpg">full page</a></figcaption></figure>
+        <figure><img src="gallery/b-fold-desktop.jpg" alt="The Funder homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/b-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/b-fold-mobile.jpg" alt="The Funder homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/b-index-mobile.jpg">full page</a></figcaption></figure>
       </div>
-      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Direction B on a phone" data-src="b/index.html" loading="lazy"></iframe></div></div>
-      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Direction B on a desktop" data-src="b/index.html" loading="lazy"></iframe></div></div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="The Funder on a phone" data-src="b/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="The Funder on a desktop" data-src="b/index.html" loading="lazy"></iframe></div></div>
     </div>
     <ul class="pages"><li><a href="b/index.html">Home</a></li><li><a href="b/commercial-solar.html">Commercial solar</a></li><li><a href="b/ppa.html">Solar PPA</a></li><li><a href="b/sectors.html">Sectors</a></li><li><a href="b/about.html">About</a></li><li><a href="b/contact.html">Contact</a></li></ul>
   </div>
-  <dl class="meta">
-    <div><dt>Who it is for</dt><dd>Finance directors and owners who will decide on the numbers, and who need to believe a two-person company can fund a PPA.</dd></div>
-    <div><dt>Why it is on the list</dt><dd>The self-funded PPA is the one thing no comparable small installer offers, and the research found the clearest PPA pages (Spirit Energy, Eden Sustainable, Solar X) win on worked examples and plain terms. This direction puts an illustrative term sheet in the hero and a comparison table on the homepage, so the financial offer is the design.</dd></div>
-    <div><dt>Borrowed from the research</dt><dd>Spirit Energy finance-page structure; Eden Sustainable PPA page order; Geo Green Power calm layout and tax-relief framing; Solar X worked example with stated assumptions.</dd></div>
-    <div><dt>Risk to watch</dt><dd>Can feel corporate for a two-brother firm. The about page and photography have to carry the human side.</dd></div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Paper white (#F7F8F6), forest green (#124734) for type and buttons, gold (#C8A24A) as a thin highlight. Green and gold read as banking and land, which suits a company funding its own systems.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Newsreader, a high-contrast serif, at 500 for headlines up to 70px with italic emphasis; Figtree 17px body. Serif for gravity, sans for forms and tables.</dd></div>
+    <div><dt>Layout</dt><dd>Headline left, an illustrative term sheet right, a four-fact rule line beneath, then a comparison table instead of cards.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Looks like a document a finance director would file. Calm, numerate, credible.</dd></div>
   </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Finance directors and owners who will decide on the numbers, and who need to believe a two-person company can fund a PPA.</div><div><b>Why.</b> The self-funded PPA is the one thing no comparable small installer offers, and the research found the clearest PPA pages (Spirit Energy, Eden Sustainable, Solar X) win on worked examples and plain terms. This direction puts an illustrative term sheet in the hero and a comparison table on the homepage, so the financial offer is the design.</div><div><b>Borrowed from.</b> Spirit Energy finance-page structure; Eden Sustainable PPA page order; Geo Green Power calm layout and tax-relief framing; Solar X worked example with stated assumptions.</div><div><b>Risk.</b> Can feel corporate for a two-brother firm. The about page and photography have to carry the human side.</div></div></details>
 </section>
 <section class="dir" id="dir-c">
   <div class="dir-head">
-    <div class="dir-title"><span class="letter">C</span><div><h2>Engineering Grid</h2><p class="sum">Dark slate, amber, monospace data and a schematic in the hero. The electrician’s answer to the sales-company solar site.</p></div></div>
+    <div class="dir-title"><span class="letter">C</span><div><h2>Engineering Grid <span class="tag">Technical</span></h2><p class="sum">Dark slate, amber, monospace data and a schematic in the hero. The electrician’s answer to the sales-company solar site.</p></div></div>
     <div class="dir-actions"><a class="btn primary" href="c/index.html">Open the full site</a></div>
   </div>
   <div class="preview" data-dir="c">
-    <div class="seg" role="tablist" aria-label="Preview mode for direction C">
-      <button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button>
-      <button data-mode="phone" role="tab" aria-selected="false">Live phone</button>
-      <button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button>
-    </div>
+    <div class="seg" role="tablist" aria-label="Preview mode for C"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
     <div class="stage">
       <div class="shots" data-pane="shot">
-        <figure><img src="gallery/c-fold-desktop.jpg" alt="Direction C homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/c-index-desktop.jpg">full page</a></figcaption></figure>
-        <figure class="ph-shot"><img src="gallery/c-fold-mobile.jpg" alt="Direction C homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/c-index-mobile.jpg">full page</a></figcaption></figure>
+        <figure><img src="gallery/c-fold-desktop.jpg" alt="Engineering Grid homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/c-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/c-fold-mobile.jpg" alt="Engineering Grid homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/c-index-mobile.jpg">full page</a></figcaption></figure>
       </div>
-      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Direction C on a phone" data-src="c/index.html" loading="lazy"></iframe></div></div>
-      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Direction C on a desktop" data-src="c/index.html" loading="lazy"></iframe></div></div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Engineering Grid on a phone" data-src="c/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Engineering Grid on a desktop" data-src="c/index.html" loading="lazy"></iframe></div></div>
     </div>
     <ul class="pages"><li><a href="c/index.html">Home</a></li><li><a href="c/commercial-solar.html">Commercial solar</a></li><li><a href="c/ppa.html">Solar PPA</a></li><li><a href="c/sectors.html">Sectors</a></li><li><a href="c/about.html">About</a></li><li><a href="c/contact.html">Contact</a></li></ul>
   </div>
-  <dl class="meta">
-    <div><dt>Who it is for</dt><dd>Facilities, engineering and operations managers who buy on competence, standards and numbers.</dd></div>
-    <div><dt>Why it is on the list</dt><dd>Buyer guides in the research say post-commissioning support and technical rigour are the most predictive signals of installer quality, and SurgePV argues facilities buyers want an operating place, not an empty roof polygon. Both GB NRG and EvoEnergy prove a dark, technical look reads as serious in the UK. This direction turns the founders’ trade knowledge (G99, BS 7671, string testing) into the brand, which is credibility a new firm can show on day one.</dd></div>
-    <div><dt>Borrowed from the research</dt><dd>GB NRG dark palette and education-first nav; EvoEnergy dark hero; Solar X engineering byline and stated assumptions; Spirit Energy PPA flow diagram.</dd></div>
-    <div><dt>Risk to watch</dt><dd>Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly.</dd></div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Deep slate (#0B1420) background with faint amber graph-paper lines, amber (#FFB300) for the button and labels, light grey text (#E8EEF5) for about 14:1 contrast.</dd></div>
+    <div><dt>Type and sizes</dt><dd>IBM Plex Sans Condensed 700 uppercase headlines at 40 to 70px, IBM Plex Sans 17px body, IBM Plex Mono for labels and data. An engineering family with a mono for numbers.</dd></div>
+    <div><dt>Layout</dt><dd>Schematic in the hero, spec strip beneath, a four-step PPA flow with arrows, mono-numbered tables.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Serious and technical. It tells an engineer that the people behind it read standards.</dd></div>
   </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Facilities, engineering and operations managers who buy on competence, standards and numbers.</div><div><b>Why.</b> Buyer guides in the research say post-commissioning support and technical rigour are the most predictive signals of installer quality, and SurgePV argues facilities buyers want an operating place, not an empty roof polygon. Both GB NRG and EvoEnergy prove a dark, technical look reads as serious in the UK. This direction turns the founders’ trade knowledge (G99, BS 7671, string testing) into the brand, which is credibility a new firm can show on day one.</div><div><b>Borrowed from.</b> GB NRG dark palette and education-first nav; EvoEnergy dark hero; Solar X engineering byline and stated assumptions; Spirit Energy PPA flow diagram.</div><div><b>Risk.</b> Dark sites can read as cold to older owner-managers, and body text needs care. Keep inner pages lighter if it tests badly.</div></div></details>
 </section>
 <section class="dir" id="dir-d">
   <div class="dir-head">
-    <div class="dir-title"><span class="letter">D</span><div><h2>Sunline</h2><p class="sum">Warm, rounded and recognisable: a yellow sunline arc runs through every page. The family-business direction.</p></div></div>
+    <div class="dir-title"><span class="letter">D</span><div><h2>Sunline <span class="tag">Approachable</span></h2><p class="sum">Warm, rounded and recognisable: a yellow sunline arc runs through every page. The family-business direction.</p></div></div>
     <div class="dir-actions"><a class="btn primary" href="d/index.html">Open the full site</a></div>
   </div>
   <div class="preview" data-dir="d">
-    <div class="seg" role="tablist" aria-label="Preview mode for direction D">
-      <button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button>
-      <button data-mode="phone" role="tab" aria-selected="false">Live phone</button>
-      <button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button>
-    </div>
+    <div class="seg" role="tablist" aria-label="Preview mode for D"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
     <div class="stage">
       <div class="shots" data-pane="shot">
-        <figure><img src="gallery/d-fold-desktop.jpg" alt="Direction D homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/d-index-desktop.jpg">full page</a></figcaption></figure>
-        <figure class="ph-shot"><img src="gallery/d-fold-mobile.jpg" alt="Direction D homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/d-index-mobile.jpg">full page</a></figcaption></figure>
+        <figure><img src="gallery/d-fold-desktop.jpg" alt="Sunline homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/d-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/d-fold-mobile.jpg" alt="Sunline homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/d-index-mobile.jpg">full page</a></figcaption></figure>
       </div>
-      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Direction D on a phone" data-src="d/index.html" loading="lazy"></iframe></div></div>
-      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Direction D on a desktop" data-src="d/index.html" loading="lazy"></iframe></div></div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Sunline on a phone" data-src="d/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Sunline on a desktop" data-src="d/index.html" loading="lazy"></iframe></div></div>
     </div>
     <ul class="pages"><li><a href="d/index.html">Home</a></li><li><a href="d/commercial-solar.html">Commercial solar</a></li><li><a href="d/ppa.html">Solar PPA</a></li><li><a href="d/sectors.html">Sectors</a></li><li><a href="d/about.html">About</a></li><li><a href="d/contact.html">Contact</a></li></ul>
   </div>
-  <dl class="meta">
-    <div><dt>Who it is for</dt><dd>SME owners, farmers, sports clubs and schools: people who want a local firm they can picture, not a corporate.</dd></div>
-    <div><dt>Why it is on the list</dt><dd>Eden Sustainable is the only UK site in the research with a brand device strong enough to be recognised without photography, and Mouthy Marketing’s UK critique is that solar sites are all drone shots with no people. This direction gives Solex a shape it owns before it has a single project photo, puts the two brothers at the centre, and keeps the PPA simple: we fit it, we own it, you pay less per kWh.</dd></div>
-    <div><dt>Borrowed from the research</dt><dd>Eden Sustainable brand arc and PPA explainer; Select Electrical PPA page with FAQs; Todae feasibility-check CTA; Ecoaim commercial/domestic clarity (here, commercial only).</dd></div>
-    <div><dt>Risk to watch</dt><dd>The friendliest direction can read as domestic. The commercial-only line and the 30 to 200 kW range must stay prominent.</dd></div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White with sky tint (#F1F6FC) bands, deep blue (#15346B) type, sun yellow (#FFC83D) for the arc device and the primary button with dark text.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Sora 700 headlines at 40 to 60px with a yellow highlight stroke, Nunito Sans 17px body. Geometric headline over a soft, rounded body face.</dd></div>
+    <div><dt>Layout</dt><dd>A yellow arc sweeps under the hero and recurs as a divider and in the footer; photo in an organic blob; three-tile PPA strip.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Warm and recognisable. The arc is memorable before a single project photo exists.</dd></div>
   </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> SME owners, farmers, sports clubs and schools: people who want a local firm they can picture, not a corporate.</div><div><b>Why.</b> Eden Sustainable is the only UK site in the research with a brand device strong enough to be recognised without photography, and Mouthy Marketing’s UK critique is that solar sites are all drone shots with no people. This direction gives Solex a shape it owns before it has a single project photo, puts the two brothers at the centre, and keeps the PPA simple: we fit it, we own it, you pay less per kWh.</div><div><b>Borrowed from.</b> Eden Sustainable brand arc and PPA explainer; Zenergi arch device; Select Electrical PPA page with FAQs; Todae feasibility-check CTA.</div><div><b>Risk.</b> The friendliest direction can read as domestic. The commercial-only line and the 30 to 200 kW range must stay prominent.</div></div></details>
 </section>
 <section class="dir" id="dir-e">
   <div class="dir-head">
-    <div class="dir-title"><span class="letter">E</span><div><h2>Check Your Roof</h2><p class="sum">Light, product-like and conversion-first. The homepage opens with a three-question checker that gives an indicative answer on the spot.</p></div></div>
+    <div class="dir-title"><span class="letter">E</span><div><h2>Check Your Roof <span class="tag">Conversion-first</span></h2><p class="sum">Light, product-like and conversion-first. The homepage opens with a three-question checker that gives an indicative answer on the spot.</p></div></div>
     <div class="dir-actions"><a class="btn primary" href="e/index.html">Open the full site</a></div>
   </div>
   <div class="preview" data-dir="e">
-    <div class="seg" role="tablist" aria-label="Preview mode for direction E">
-      <button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button>
-      <button data-mode="phone" role="tab" aria-selected="false">Live phone</button>
-      <button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button>
-    </div>
+    <div class="seg" role="tablist" aria-label="Preview mode for E"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
     <div class="stage">
       <div class="shots" data-pane="shot">
-        <figure><img src="gallery/e-fold-desktop.jpg" alt="Direction E homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/e-index-desktop.jpg">full page</a></figcaption></figure>
-        <figure class="ph-shot"><img src="gallery/e-fold-mobile.jpg" alt="Direction E homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/e-index-mobile.jpg">full page</a></figcaption></figure>
+        <figure><img src="gallery/e-fold-desktop.jpg" alt="Check Your Roof homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/e-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/e-fold-mobile.jpg" alt="Check Your Roof homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/e-index-mobile.jpg">full page</a></figcaption></figure>
       </div>
-      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Direction E on a phone" data-src="e/index.html" loading="lazy"></iframe></div></div>
-      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Direction E on a desktop" data-src="e/index.html" loading="lazy"></iframe></div></div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Check Your Roof on a phone" data-src="e/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Check Your Roof on a desktop" data-src="e/index.html" loading="lazy"></iframe></div></div>
     </div>
     <ul class="pages"><li><a href="e/index.html">Home</a></li><li><a href="e/commercial-solar.html">Commercial solar</a></li><li><a href="e/ppa.html">Solar PPA</a></li><li><a href="e/sectors.html">Sectors</a></li><li><a href="e/about.html">About</a></li><li><a href="e/contact.html">Contact</a></li></ul>
   </div>
-  <dl class="meta">
-    <div><dt>Who it is for</dt><dd>Busy owners and managers who want a quick, honest answer before they talk to anyone.</dd></div>
-    <div><dt>Why it is on the list</dt><dd>The research found dedicated, one-decision pages convert several times better than brochure homepages, that cutting a form to three fields lifted completions by 145% in one solar case, and that Absolar’s address-only "Check my building" is the lowest-friction first step in the UK sample. Because Solex only wants 30 to 200 kW sites with daytime load, a checker that qualifies the lead is honest as well as effective, and it works with no portfolio at all.</dd></div>
-    <div><dt>Borrowed from the research</dt><dd>Absolar assessment-first hero; Solar X bill slider and stated assumptions; SunPeak navigation of writable pages; Smart Ease eligibility thresholds.</dd></div>
-    <div><dt>Risk to watch</dt><dd>A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it.</dd></div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White with a pale grey-blue (#F2F5FA) hero, ink (#0E1B2E) type, electric blue (#1F5EFF) for the button and the checker’s selected state.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Manrope throughout: 800 headlines at 36 to 58px, 400 to 600 body at 17px. One family keeps a tool-like page consistent.</dd></div>
+    <div><dt>Layout</dt><dd>Headline left, a three-question checker right with a live indicative result, then “what you get back” in three cards.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Feels like a useful tool rather than a brochure. The visitor gets an answer before they give an email address.</dd></div>
   </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Busy owners and managers who want a quick, honest answer before they talk to anyone.</div><div><b>Why.</b> The research found dedicated, one-decision pages convert several times better than brochure homepages, that cutting a form to three fields lifted completions by 145% in one solar case, and that Absolar’s address-only "Check my building" is the lowest-friction first step in the UK sample. Because Solex only wants 30 to 200 kW sites with daytime load, a checker that qualifies the lead is honest as well as effective, and it works with no portfolio at all.</div><div><b>Borrowed from.</b> Absolar assessment-first hero; Solar X bill slider and stated assumptions; SunPeak navigation of writable pages; Smart Ease eligibility thresholds.</div><div><b>Risk.</b> A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it.</div></div></details>
 </section>
-  <section class="block" id="why">
-    <h2>Why these five, and how the choice was tested</h2>
-    <p class="lede">The research report ranked twenty solar sites and found that the most copyable small-firm sites win trust through process, explained qualifications, named funding and honest numbers, not through a portfolio. Solex has three things to build on today: two electricians who own the company, a PPA it funds itself, and a tight 30 to 200 kW focus. Eight directions were sketched, each tested against six questions, and three were dropped.</p>
-    <div class="tbl"><table><thead><tr><th>Test</th><th>A Straight Talk</th><th>B The Funder</th><th>C Engineering Grid</th><th>D Sunline</th><th>E Check Your Roof</th></tr></thead><tbody><tr><td>Works today with no project photos or case studies</td><td>Founders, badges and process carry it</td><td>Term sheet and tables carry it</td><td>Schematic, standards and data carry it</td><td>Brand arc and the brothers carry it</td><td>The checker carries it</td></tr><tr><td>Makes the self-funded PPA unmistakable</td><td>Two-route cards under the hero</td><td>The hero is the PPA term sheet</td><td>PPA mechanism flow on the homepage</td><td>One-line PPA strip: fit it, own it, pay less</td><td>Checker reports PPA fit on the spot</td></tr><tr><td>Different from the other four in structure, not just colour</td><td>Utility bar, photo hero with founder card</td><td>Serif, term sheet, comparison table</td><td>Dark grid, schematic, spec strip</td><td>Arc device, blob photo, 3-step strip</td><td>Form-first hero with live result</td></tr><tr><td>Aimed at a named buyer</td><td>Owner-managers, farms, factories</td><td>Finance directors</td><td>Facilities and engineering managers</td><td>SMEs, clubs, schools, family firms</td><td>Busy owners who want a quick answer</td></tr><tr><td>Honest: placeholders visible, modelled figures labelled</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes, with assumptions under the result</td></tr><tr><td>Buildable as a fast static site</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes, checker is 40 lines of script</td></tr></tbody></table></div>
-    <h3>Three directions that were dropped</h3>
-    <ul class="dropped"><li><b>Photo-led premium (Photon, Joju)</b><span>A full-bleed drone shot of a 5 MW roof is the whole design. Solex has no photos it can use, so it would launch on stock imagery, which UK critics and buyer guides both flag as the main trust-killer. Revisit after the first three projects.</span></li><li><b>Editorial knowledge bank (Spirit Energy)</b><span>Credibility from dozens of guides and calculators. A two-person firm cannot feed it for months, and an empty resources section reads worse than none.</span></li><li><b>County-first local (“Your county’s commercial solar installers”)</b><span>Useful for search, but it is a service-area line and a set of location pages, not a design direction. It is folded into every direction as the region placeholder.</span></li></ul>
-    <div class="rec"><h3>A recommendation, if you want one</h3><p>B, The Funder, is the strongest match for what makes Solex different: a finance director takes a term sheet seriously, and no comparable small installer can put “funded by the people who install it” in a headline. Its one weakness, feeling corporate, is fixed by borrowing A’s “who you will deal with” card into the hero. If you would rather qualify leads before you speak to anyone, E does that best. A is the safest if most of your customers are owner-managers who buy on the person, not the paperwork.</p><p class="small">None of this is final. Pick one, or name the pieces you like from each, and the real site gets built from that.</p></div>
+<section class="dir" id="dir-f">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">F</span><div><h2>Friendly Teal <span class="tag">Approachable</span></h2><p class="sum">Rounded type, teal and coral, three honest numbers in the hero. The friendliest direction that still looks like a business.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="f/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="f">
+    <div class="seg" role="tablist" aria-label="Preview mode for F"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/f-fold-desktop.jpg" alt="Friendly Teal homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/f-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/f-fold-mobile.jpg" alt="Friendly Teal homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/f-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Friendly Teal on a phone" data-src="f/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Friendly Teal on a desktop" data-src="f/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="f/index.html">Home</a></li><li><a href="f/commercial-solar.html">Commercial solar</a></li><li><a href="f/ppa.html">Solar PPA</a></li><li><a href="f/sectors.html">Sectors</a></li><li><a href="f/about.html">About</a></li><li><a href="f/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Teal (#0F766E) as the brand colour on white, coral (#FF6B4A) reserved for the one primary button, mint-grey (#F3F8F7) bands. Dark teal text instead of black keeps it soft without losing contrast (about 11:1).</dd></div>
+    <div><dt>Type and sizes</dt><dd>Nunito for everything: 800 for headlines at 44 to 60px with tight tracking, 400 at 17px for body with 1.6 line height. One rounded family keeps it friendly and consistent.</dd></div>
+    <div><dt>Layout</dt><dd>Left-aligned hero with three number cards instead of a photo, so nothing depends on photography. Big radii (16 and 24px) and soft bands.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>A visitor sees a friendly company, a clear offer and three numbers that answer “what is in it for me” before scrolling.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Owner-managers and office managers who are put off by corporate energy sites and sales-y solar sites alike.</div><div><b>Why.</b> Octopus Energy changed what a UK energy brand can look like: warm, rounded, plain-spoken, and trusted by businesses as well as households. This borrows that warmth without the pink and the illustrations, so it reads as a small firm you would call rather than a utility.</div><div><b>Borrowed from.</b> Octopus Energy tone and rounded type; Fort Energy outcome stats; Ecoaim plain-English PPA line.</div><div><b>Risk.</b> Rounded type can read as consumer. The 30 to 200 kW line and the “commercial only” chip must stay in the hero.</div></div></details>
+</section>
+<section class="dir" id="dir-g">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">G</span><div><h2>Price Up Front <span class="tag">Conversion-first</span></h2><p class="sum">Navy and green, prices in the hero, three steps and a reviews strip. The BOXT and Heatable model applied to commercial solar.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="g/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="g">
+    <div class="seg" role="tablist" aria-label="Preview mode for G"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/g-fold-desktop.jpg" alt="Price Up Front homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/g-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/g-fold-mobile.jpg" alt="Price Up Front homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/g-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Price Up Front on a phone" data-src="g/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Price Up Front on a desktop" data-src="g/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="g/index.html">Home</a></li><li><a href="g/commercial-solar.html">Commercial solar</a></li><li><a href="g/ppa.html">Solar PPA</a></li><li><a href="g/sectors.html">Sectors</a></li><li><a href="g/about.html">About</a></li><li><a href="g/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Navy (#0B2545) for type and headers, green (#1E8A5B) only on buttons, cool grey (#F5F7FA) background. Green signals “go” and money; navy keeps it serious. Both pass AA contrast on white.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Outfit throughout: 700 headlines at 40 to 56px, body 17px at 400. Geometric but not childish; numbers line up cleanly in price cards.</dd></div>
+    <div><dt>Layout</dt><dd>Hero carries a four-card price guide. Reviews strip (placeholder until real reviews exist) and a three-step strip directly under it, the pattern that converts on trades sites.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>A visitor sees prices immediately, understands the process in three steps, and the enquiry no longer feels like a commitment.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Owners who hate being quoted “call us for a price”. They want to know roughly what it costs before they pick up the phone.</div><div><b>Why.</b> Heatable and BOXT took a trade (boiler installation) that used to hide its prices and built market leaders on “see your price now, fixed, no surveyor visit”. Commercial solar cannot be priced online exactly, but publishing indicative prices for 30, 50, 100 and 200 kW, and £0 on a PPA, removes the biggest reason people do not enquire.</div><div><b>Borrowed from.</b> BOXT navy hero with white card and Trustpilot line; Heatable “from £” product tiles; Excel Energy calculator; Smart Ease eligibility thresholds.</div><div><b>Risk.</b> Published prices must be kept current and clearly labelled “from”, or they become a complaint.</div></div></details>
+</section>
+<section class="dir" id="dir-h">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">H</span><div><h2>Stone &amp; Green <span class="tag">Premium</span></h2><p class="sum">Stone neutrals, deep green type, one big photograph and a lot of air. The Scandinavian premium look.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="h/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="h">
+    <div class="seg" role="tablist" aria-label="Preview mode for H"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/h-fold-desktop.jpg" alt="Stone &amp; Green homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/h-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/h-fold-mobile.jpg" alt="Stone &amp; Green homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/h-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Stone &amp; Green on a phone" data-src="h/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Stone &amp; Green on a desktop" data-src="h/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="h/index.html">Home</a></li><li><a href="h/commercial-solar.html">Commercial solar</a></li><li><a href="h/ppa.html">Solar PPA</a></li><li><a href="h/sectors.html">Sectors</a></li><li><a href="h/about.html">About</a></li><li><a href="h/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Warm stone (#F2EFE9) background, deep green (#1F3A2E) for all type and the single button, olive (#7C8C4D) for small details. No bright accent at all; the photograph supplies colour.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Instrument Sans at 500 for headlines up to 64px with slight negative tracking, 400 at 17px body with 1.65 line height. Medium weight instead of bold keeps it calm.</dd></div>
+    <div><dt>Layout</dt><dd>Headline centred above one wide photo. Three plain text columns instead of cards. Rules, not boxes. Sections are tall with lots of white space.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Feels established and unhurried. The visitor is not sold to; they are shown.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Hotels, head offices, private schools and premium brands who judge a supplier by how considered everything looks.</div><div><b>Why.</b> Aira sells heat pumps with the restraint of a furniture brand: a single photograph, a quiet palette and large, light type. Buyers at the top of the market read that calm as competence. Solex can borrow the discipline (one photo, generous spacing, no badges shouting) and still state the offer plainly.</div><div><b>Borrowed from.</b> Aira composition and neutrals; Geo Green Power calm hero; REC Group product photography treatment.</div><div><b>Risk.</b> Looks expensive. Fine for premium clients, wrong for a farm or a tyre depot. Needs one strong photograph at launch.</div></div></details>
+</section>
+<section class="dir" id="dir-i">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">I</span><div><h2>Big Type <span class="tag">Bold</span></h2><p class="sum">One giant headline, black on white, orange only on the button. The Enphase approach: say one thing, very large.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="i/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="i">
+    <div class="seg" role="tablist" aria-label="Preview mode for I"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/i-fold-desktop.jpg" alt="Big Type homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/i-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/i-fold-mobile.jpg" alt="Big Type homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/i-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Big Type on a phone" data-src="i/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Big Type on a desktop" data-src="i/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="i/index.html">Home</a></li><li><a href="i/commercial-solar.html">Commercial solar</a></li><li><a href="i/ppa.html">Solar PPA</a></li><li><a href="i/sectors.html">Sectors</a></li><li><a href="i/about.html">About</a></li><li><a href="i/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White, near-black (#111) and one orange (#F26B1D) used only on the primary button and a few highlights, with dark text on the orange for contrast (about 7:1).</dd></div>
+    <div><dt>Type and sizes</dt><dd>Hanken Grotesk 800 headlines from 44px on phones to 90px on desktop, tracking tightened to -0.04em; body 18px for easy reading. Two sizes do most of the work.</dd></div>
+    <div><dt>Layout</dt><dd>Centred hero with one button, then a full-width photo strip, then a four-stat band. Everything below is wide, simple rows.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>The visitor cannot miss the message. It feels confident, modern and uncluttered.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Anyone skimming on a phone. Decision-makers who want the point in three seconds.</div><div><b>Why.</b> Enphase, a component manufacturer, outsells rivals partly because its site says one thing at a time in enormous type with a single orange action. Oversized typography is the dominant 2026 trend precisely because it reads instantly on phones. For a small firm it also costs nothing: no photography, no illustration, just words set well.</div><div><b>Borrowed from.</b> GoCardless and Wise oversized centred headlines; Enphase single-orange-action discipline; the “one decision per page” rule from the research.</div><div><b>Risk.</b> Big type leaves less room for nuance. The PPA details must be one scroll away, not three.</div></div></details>
+</section>
+<section class="dir" id="dir-j">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">J</span><div><h2>Black &amp; Signal <span class="tag">Premium</span></h2><p class="sum">Black hero with a photograph, white body, signal orange. The 1KOMMA5° look: a solar brand that feels like a tech brand.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="j/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="j">
+    <div class="seg" role="tablist" aria-label="Preview mode for J"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/j-fold-desktop.jpg" alt="Black &amp; Signal homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/j-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/j-fold-mobile.jpg" alt="Black &amp; Signal homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/j-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Black &amp; Signal on a phone" data-src="j/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Black &amp; Signal on a desktop" data-src="j/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="j/index.html">Home</a></li><li><a href="j/commercial-solar.html">Commercial solar</a></li><li><a href="j/ppa.html">Solar PPA</a></li><li><a href="j/sectors.html">Sectors</a></li><li><a href="j/about.html">About</a></li><li><a href="j/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Near-black (#0D0D0D) hero and footer, white body, signal orange (#FF4F1F) for the primary button with black text, light grey (#F4F4F2) bands.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Schibsted Grotesk, a newspaper grotesk: 800 for headlines at 44 to 72px, 400 at 17px body. Crisp and slightly editorial.</dd></div>
+    <div><dt>Layout</dt><dd>Dark hero split 55/45 between headline and photo, with a standards ticker along the bottom edge. Light body uses a comparison table and simple cards.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Premium and current. The first screen feels like a brand film; the second screen gets down to numbers.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Younger owners and directors who buy from brands, and businesses that want their sustainability story to look modern.</div><div><b>Why.</b> 1KOMMA5° built a pan-European solar brand in four years on a split layout: a dark, photographic hero that feels premium, then a light, factual body. The research found dark heroes read as serious in the UK (GB NRG, EvoEnergy) but dark body text tires readers, so this uses dark only where it sets the mood.</div><div><b>Borrowed from.</b> 1KOMMA5° dark-to-light structure; Wise Business and Inspired dark photographic heroes; EvoEnergy hero; Solar X comparison table.</div><div><b>Risk.</b> Needs a good photograph in the hero. Placeholder for now; replace it first.</div></div></details>
+</section>
+<section class="dir" id="dir-k">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">K</span><div><h2>Editorial Serif <span class="tag">Trust and numbers</span></h2><p class="sum">Serif headlines, a 20-year cost chart in the hero, warm white paper. Reads like a well-made guide rather than an advert.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="k/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="k">
+    <div class="seg" role="tablist" aria-label="Preview mode for K"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/k-fold-desktop.jpg" alt="Editorial Serif homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/k-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/k-fold-mobile.jpg" alt="Editorial Serif homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/k-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Editorial Serif on a phone" data-src="k/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Editorial Serif on a desktop" data-src="k/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="k/index.html">Home</a></li><li><a href="k/commercial-solar.html">Commercial solar</a></li><li><a href="k/ppa.html">Solar PPA</a></li><li><a href="k/sectors.html">Sectors</a></li><li><a href="k/about.html">About</a></li><li><a href="k/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Warm paper (#FBF9F4) background, navy (#101F3A) type and buttons, a single sun-yellow (#F5B700) used in the chart and small highlights. Warm paper with cool navy avoids the beige-and-terracotta look.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Lora (a readable serif) at 600 for headlines, 40 to 60px; Work Sans 400 at 17px for body, 1.6 line height. Serif for authority, sans for legibility in tables and forms.</dd></div>
+    <div><dt>Layout</dt><dd>Hero splits headline and a drawn-to-scale chart. Lists use rules instead of cards. Wide measure kept under 70 characters.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Looks considered and honest. The chart does the persuading.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Careful buyers who read before they call: finance directors, bursars, farm partnerships.</div><div><b>Why.</b> Sunsave sells solar subscriptions on an editorial site: serif headlines, long clear explanations and charts that show the money over time. Readers who distrust glossy sales pages trust a page that looks like it was written to inform. Solex’s PPA is a 20-year decision, which is exactly what a chart can explain and a slogan cannot.</div><div><b>Borrowed from.</b> Sunsave’s plain-English subscription explanation and trust strip; Spirit Energy worked examples; Ecoaim PPA article; editorial serif from the Guardian-style long-read pattern.</div><div><b>Risk.</b> More reading on the first screen than any other direction. The chart must be labelled honestly as illustrative.</div></div></details>
+</section>
+<section class="dir" id="dir-l">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">L</span><div><h2>Minimal Photo <span class="tag">Premium</span></h2><p class="sum">Full-width photograph, light centred headline, two equal buttons. The Tesla approach: almost nothing on the page but the product.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="l/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="l">
+    <div class="seg" role="tablist" aria-label="Preview mode for L"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/l-fold-desktop.jpg" alt="Minimal Photo homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/l-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/l-fold-mobile.jpg" alt="Minimal Photo homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/l-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Minimal Photo on a phone" data-src="l/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Minimal Photo on a desktop" data-src="l/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="l/index.html">Home</a></li><li><a href="l/commercial-solar.html">Commercial solar</a></li><li><a href="l/ppa.html">Solar PPA</a></li><li><a href="l/sectors.html">Sectors</a></li><li><a href="l/about.html">About</a></li><li><a href="l/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White and near-black (#171A20) only, with Tesla’s restrained blue (#3E6AE1) for the single primary button. Photography provides all colour.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Figtree at 500 for headlines (not bold) at 40 to 64px, 400 at 16px body. Small uppercase navigation. Light weights signal confidence.</dd></div>
+    <div><dt>Layout</dt><dd>Edge-to-edge photo with the headline overlaid and two side-by-side buttons. Below, alternating photo and text rows, each with one message.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Calm, expensive, product-like. The visitor feels they are looking at a finished thing, not a pitch.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Visitors who already know they want solar and are choosing an installer on confidence and finish.</div><div><b>Why.</b> Tesla’s solar pages are the most imitated energy design in the world because they remove everything except a photograph, one line and two choices. It works when the photograph is excellent. For Solex it is the direction to grow into once the first installs are photographed; the placeholder shows the composition.</div><div><b>Borrowed from.</b> Tesla solar layout and restraint; Photon Energy person-on-roof hero; REC photography treatment.</div><div><b>Risk.</b> Entirely dependent on photography and says little about the people. Weakest at launch, strongest after the first three projects.</div></div></details>
+</section>
+<section class="dir" id="dir-m">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">M</span><div><h2>Local Trades <span class="tag">Approachable</span></h2><p class="sum">Green and white, phone number in the header, big tap targets, plain words. The best version of the local trade website.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="m/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="m">
+    <div class="seg" role="tablist" aria-label="Preview mode for M"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/m-fold-desktop.jpg" alt="Local Trades homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/m-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/m-fold-mobile.jpg" alt="Local Trades homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/m-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Local Trades on a phone" data-src="m/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Local Trades on a desktop" data-src="m/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="m/index.html">Home</a></li><li><a href="m/commercial-solar.html">Commercial solar</a></li><li><a href="m/ppa.html">Solar PPA</a></li><li><a href="m/sectors.html">Sectors</a></li><li><a href="m/about.html">About</a></li><li><a href="m/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Green (#157A4A) as the brand colour on white, orange (#F08A24) for the one primary button with dark text, mint band (#F2F7F3). Green reads as safe and electrical (NICEIC-adjacent); orange is the call to action.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Rubik, 700 headlines at 38 to 52px, body 18px at 400 with 1.6 line height: a size up from most sites, because the readers are often on a phone in a van or a yard.</dd></div>
+    <div><dt>Layout</dt><dd>Phone number and “Call Phil” in the header on every screen. Hero with a photo of the team, trust strip directly beneath, then the two routes. Buttons are 48px tall.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Instantly familiar: a local firm that looks competent and is easy to ring.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Owner-managers, farmers and site managers who want a straight answer and a number to ring.</div><div><b>Why.</b> The trade sites that win locally (the better Checkatrade-era plumbers, electricians and roofers) share one thing: they make it effortless to call. Phone number top right, who you are speaking to, what it costs, when you can come. Nothing clever. This direction applies that to commercial solar with bigger type and clearer spacing than most trade sites manage.</div><div><b>Borrowed from.</b> Checkatrade category chips and badge row; Hometree reviews strip; Ecoaim utility bar; Actismart (three electrician brothers) credibility stack.</div><div><b>Risk.</b> Can look like every other trade site. The difference has to be the writing and the PPA.</div></div></details>
+</section>
+<section class="dir" id="dir-n">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">N</span><div><h2>Bank Clean <span class="tag">Trust and numbers</span></h2><p class="sum">White, very legible, one teal accent and a Buy / PPA toggle in the hero. The clarity of a challenger bank applied to solar.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="n/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="n">
+    <div class="seg" role="tablist" aria-label="Preview mode for N"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/n-fold-desktop.jpg" alt="Bank Clean homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/n-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/n-fold-mobile.jpg" alt="Bank Clean homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/n-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Bank Clean on a phone" data-src="n/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Bank Clean on a desktop" data-src="n/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="n/index.html">Home</a></li><li><a href="n/commercial-solar.html">Commercial solar</a></li><li><a href="n/ppa.html">Solar PPA</a></li><li><a href="n/sectors.html">Sectors</a></li><li><a href="n/about.html">About</a></li><li><a href="n/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White, slate (#1C2B36) type, a single teal (#0B7F72) for buttons and highlights, pale grey-blue (#F5F7F9) bands. Teal passes AA with white text.</dd></div>
+    <div><dt>Type and sizes</dt><dd>DM Sans throughout: 700 headlines at 36 to 52px, body 16px at 400 with 1.6 line height. Smaller body than other directions, bank-style, but with more space around it.</dd></div>
+    <div><dt>Layout</dt><dd>Left headline, right toggle card. A sticky “Book a free site survey” bar on phones. Three plain columns, a comparison table, then cards.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Clear, trustworthy, modern. The visitor can answer “which route?” before scrolling.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Finance directors and owners who want to compare the two routes in ten seconds without reading.</div><div><b>Why.</b> Starling and Monzo made financial products feel simple by showing one comparison, in plain type, with lots of white space and one accent colour. A commercial solar decision is also a financial comparison: buy or PPA. Putting that comparison in the hero as a toggle turns the homepage into the decision tool.</div><div><b>Borrowed from.</b> GoCardless white, centred two-button hero; Starling’s single-accent discipline; Solar X comparison table; Smart Ease eligibility thresholds.</div><div><b>Risk.</b> Very clean designs can feel generic. The toggle and the copy have to carry the personality.</div></div></details>
+</section>
+<section class="dir" id="dir-o">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">O</span><div><h2>Blueprint <span class="tag">Technical</span></h2><p class="sum">The engineering direction in daylight: white, blueprint blue, graph paper and the schematic, with easier reading than the dark version.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="o/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="o">
+    <div class="seg" role="tablist" aria-label="Preview mode for O"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/o-fold-desktop.jpg" alt="Blueprint homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/o-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/o-fold-mobile.jpg" alt="Blueprint homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/o-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Blueprint on a phone" data-src="o/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Blueprint on a desktop" data-src="o/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="o/index.html">Home</a></li><li><a href="o/commercial-solar.html">Commercial solar</a></li><li><a href="o/ppa.html">Solar PPA</a></li><li><a href="o/sectors.html">Sectors</a></li><li><a href="o/about.html">About</a></li><li><a href="o/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White with faint blue graph-paper lines, blueprint blue (#1E4ED8) for buttons, labels and the schematic, slate (#0F172A) text, pale blue (#F3F6FB) bands.</dd></div>
+    <div><dt>Type and sizes</dt><dd>IBM Plex Sans Condensed 700 for uppercase headlines at 40 to 64px, IBM Plex Sans 17px body, IBM Plex Mono for labels and numbers. An engineering family with a mono for data.</dd></div>
+    <div><dt>Layout</dt><dd>Hero on graph paper with the schematic at right, spec strip beneath, four-step PPA flow, mono-numbered tables.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Precise and legible. It looks like it was made by people who read standards, which is the point.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Facilities, engineering and operations managers, including the older ones who find dark sites hard to read.</div><div><b>Why.</b> Direction C proved the technical story works, but dark backgrounds reduce reading comfort for longer text and some buyers associate them with gaming or crypto. A blueprint treatment keeps the schematic, the monospace labels and the standards, on white, so the same competence reads as calm rather than edgy.</div><div><b>Borrowed from.</b> Direction C structure; SunPeak process-led navigation; Hoare Lea engineering-consultancy restraint.</div><div><b>Risk.</b> Blue-on-white is the most common corporate scheme. The graph paper and schematic are what keep it distinctive.</div></div></details>
+</section>
+<section class="dir" id="dir-p">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">P</span><div><h2>Photo Premium <span class="tag">Premium</span></h2><p class="sum">Full-bleed photograph, serif headline, black and white, and a projects grid. What the site becomes once the first three installs are photographed.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="p/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="p">
+    <div class="seg" role="tablist" aria-label="Preview mode for P"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/p-fold-desktop.jpg" alt="Photo Premium homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/p-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/p-fold-mobile.jpg" alt="Photo Premium homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/p-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Photo Premium on a phone" data-src="p/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Photo Premium on a desktop" data-src="p/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="p/index.html">Home</a></li><li><a href="p/commercial-solar.html">Commercial solar</a></li><li><a href="p/ppa.html">Solar PPA</a></li><li><a href="p/sectors.html">Sectors</a></li><li><a href="p/about.html">About</a></li><li><a href="p/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Black and white only. No accent colour; the photographs and a thin underline carry emphasis. Buttons are solid black.</dd></div>
+    <div><dt>Type and sizes</dt><dd>DM Serif Display for headlines at 44 to 76px (a high-contrast serif that holds up over photographs), Albert Sans 17px body. The pairing signals craft.</dd></div>
+    <div><dt>Layout</dt><dd>Edge-to-edge photo with the headline bottom-left over a gradient, then a three-tile projects grid, then text sections with wide margins.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Looks like an established firm with work to show. Which is exactly why it has to wait for real photographs.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Larger clients and architects who choose on evidence of finished work.</div><div><b>Why.</b> The research dropped the photo-led direction for launch because Solex has no usable photos. It belongs in the set anyway, as the target: the best installer sites (Photon, Joju, Onyx) are photo-led, and a site that is designed to receive real project photography from day one avoids a redesign later. The placeholders show the composition; the project tiles are labelled honestly.</div><div><b>Borrowed from.</b> Photon Energy person-on-roof hero; Onyx Renewables project grid; DM Serif editorial headline.</div><div><b>Risk.</b> Launching this with stock imagery would be a mistake. Build it, hold it until the first projects exist.</div></div></details>
+</section>
+<section class="dir" id="dir-q">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">Q</span><div><h2>Farm &amp; Rural <span class="tag">Sector-specific</span></h2><p class="sum">Olive, straw and soil, a slab-serif headline and barn roofs. A sector-specific version aimed squarely at farms and rural businesses.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="q/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="q">
+    <div class="seg" role="tablist" aria-label="Preview mode for Q"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/q-fold-desktop.jpg" alt="Farm &amp; Rural homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/q-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/q-fold-mobile.jpg" alt="Farm &amp; Rural homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/q-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Farm &amp; Rural on a phone" data-src="q/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Farm &amp; Rural on a desktop" data-src="q/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="q/index.html">Home</a></li><li><a href="q/commercial-solar.html">Commercial solar</a></li><li><a href="q/ppa.html">Solar PPA</a></li><li><a href="q/sectors.html">Sectors</a></li><li><a href="q/about.html">About</a></li><li><a href="q/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Straw (#F4EFDF) background, soil (#2F2A1F) text, olive (#5F6F3A) brand colour, harvest gold (#D98E04) on the primary button with dark text. Earthy but still high contrast.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Bitter (a slab serif) at 700 for headlines at 38 to 56px, Source Sans 3 at 17px body. Slab serifs read as sturdy and practical.</dd></div>
+    <div><dt>Layout</dt><dd>Hero with a wide barn-roof photograph and a bullet list of rural loads, then a three-tile strip of farm-specific benefits, then the standard sections.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Feels like it was made for a farm, not adapted for one. The visitor sees their own building type immediately.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Farmers, dairies, food processors, equestrian and rural estates with big shed roofs and daytime loads.</div><div><b>Why.</b> Agriculture is the sector where 30 to 200 kW fits most naturally (barns, grain stores, milking parlours) and where buyers respond to vernacular, not corporate polish. Agricultural suppliers and rural insurers use earthy palettes and slab serifs for exactly that reason. A sector homepage can also be the template for other sector landing pages later.</div><div><b>Borrowed from.</b> Veep Energy niche sector pages; Spirit Energy sector menu; NFU-style rural visual language.</div><div><b>Risk.</b> It is a sector page, not a whole-company look, unless farms are going to be most of the business.</div></div></details>
+</section>
+<section class="dir" id="dir-r">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">R</span><div><h2>Corporate Blue <span class="tag">Trust and numbers</span></h2><p class="sum">Royal blue, white and grey, service tiles with icons, stats and an accreditations strip. The conventional corporate layout, done cleanly.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="r/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="r">
+    <div class="seg" role="tablist" aria-label="Preview mode for R"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/r-fold-desktop.jpg" alt="Corporate Blue homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/r-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/r-fold-mobile.jpg" alt="Corporate Blue homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/r-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Corporate Blue on a phone" data-src="r/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Corporate Blue on a desktop" data-src="r/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="r/index.html">Home</a></li><li><a href="r/commercial-solar.html">Commercial solar</a></li><li><a href="r/ppa.html">Solar PPA</a></li><li><a href="r/sectors.html">Sectors</a></li><li><a href="r/about.html">About</a></li><li><a href="r/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Royal blue (#0B4F9E) for headers and buttons, light blue (#00A3E0) for icons only, dark grey (#1F2933) text, light grey (#F2F5F9) bands. The most common B2B scheme in the UK.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Open Sans throughout: 700 headlines at 34 to 48px, 16px body. Deliberately ordinary and highly readable.</dd></div>
+    <div><dt>Layout</dt><dd>Photo hero with overlaid headline, four service tiles with icons, a stat band, sectors, accreditations, FAQ, contact form. The order procurement teams expect.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Looks like an established supplier. Nothing surprises the visitor, which for some buyers is the point.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Facilities managers and procurement teams at larger companies who expect a supplier site to look like the ones they already deal with.</div><div><b>Why.</b> Custom Solar (Mitie), Vaillant and most facilities suppliers use the same blue-and-white template because procurement buyers trust what is familiar. The research found no design award here, only a lot of business. Including the conventional look lets the brothers compare “safe and familiar” against the more distinctive directions with their own eyes.</div><div><b>Borrowed from.</b> Custom Solar / Mitie structure; Vaillant service tiles; Excel Energy accreditations page.</div><div><b>Risk.</b> Forgettable. It will not be remembered after the tab is closed, but it will not be mistrusted either.</div></div></details>
+</section>
+<section class="dir" id="dir-s">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">S</span><div><h2>Sunrise <span class="tag">Bold</span></h2><p class="sum">A warm amber-to-orange hero, white cards, rounded corners. Optimistic and energetic, the colour of the product itself.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="s/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="s">
+    <div class="seg" role="tablist" aria-label="Preview mode for S"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/s-fold-desktop.jpg" alt="Sunrise homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/s-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/s-fold-mobile.jpg" alt="Sunrise homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/s-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Sunrise on a phone" data-src="s/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Sunrise on a desktop" data-src="s/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="s/index.html">Home</a></li><li><a href="s/commercial-solar.html">Commercial solar</a></li><li><a href="s/ppa.html">Solar PPA</a></li><li><a href="s/sectors.html">Sectors</a></li><li><a href="s/about.html">About</a></li><li><a href="s/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>Hero gradient from amber (#F59E0B) to deep orange (#EA580C) with white type over the darker end, white body, warm tint (#FFF7ED) bands, amber button with dark text (about 8:1 contrast).</dd></div>
+    <div><dt>Type and sizes</dt><dd>Plus Jakarta Sans: 800 headlines at 40 to 60px, 400 body at 17px. Rounded, contemporary, friendly without being soft.</dd></div>
+    <div><dt>Layout</dt><dd>Gradient hero with a white card holding the three key numbers, then three tiles, cards for systems, and the standard sections on white.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Warm and confident. The page feels like the product.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Owners who want their solar decision to feel positive and visible, hospitality, leisure and retail.</div><div><b>Why.</b> Of the 2026 trends, the one that fits solar best is warmth: saturated, optimistic colour is back, and sunlight is the only gradient a solar company can use without it looking borrowed from a software start-up. Enphase and Sunrun both own orange; this uses amber to orange as a sunrise band and keeps everything else white and plain.</div><div><b>Borrowed from.</b> Kensa and Monzo Business orange-gradient heroes; Enphase orange discipline; Fort Energy outcome stats.</div><div><b>Risk.</b> Gradients date quickly and can look consumer. Keep the gradient to the hero band only.</div></div></details>
+</section>
+<section class="dir" id="dir-t">
+  <div class="dir-head">
+    <div class="dir-title"><span class="letter">T</span><div><h2>Swiss Grid <span class="tag">Bold</span></h2><p class="sum">Black, white and grey on a strict grid, with safety yellow as a marker. The architect’s version of a solar site.</p></div></div>
+    <div class="dir-actions"><a class="btn primary" href="t/index.html">Open the full site</a></div>
+  </div>
+  <div class="preview" data-dir="t">
+    <div class="seg" role="tablist" aria-label="Preview mode for T"><button class="on" data-mode="shot" role="tab" aria-selected="true">Screenshots</button><button data-mode="phone" role="tab" aria-selected="false">Live phone</button><button data-mode="desktop" role="tab" aria-selected="false">Live desktop</button></div>
+    <div class="stage">
+      <div class="shots" data-pane="shot">
+        <figure><img src="gallery/t-fold-desktop.jpg" alt="Swiss Grid homepage on desktop, first screen" loading="lazy"><figcaption>Desktop, first screen · <a href="gallery/t-index-desktop.jpg">full page</a></figcaption></figure>
+        <figure class="ph-shot"><img src="gallery/t-fold-mobile.jpg" alt="Swiss Grid homepage on a phone, first screen" loading="lazy"><figcaption>Phone · <a href="gallery/t-index-mobile.jpg">full page</a></figcaption></figure>
+      </div>
+      <div class="device phone" data-pane="phone" hidden><div class="frame"><iframe title="Swiss Grid on a phone" data-src="t/index.html" loading="lazy"></iframe></div></div>
+      <div class="device desktop" data-pane="desktop" hidden><div class="frame"><iframe title="Swiss Grid on a desktop" data-src="t/index.html" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="pages"><li><a href="t/index.html">Home</a></li><li><a href="t/commercial-solar.html">Commercial solar</a></li><li><a href="t/ppa.html">Solar PPA</a></li><li><a href="t/sectors.html">Sectors</a></li><li><a href="t/about.html">About</a></li><li><a href="t/contact.html">Contact</a></li></ul>
+  </div>
+  <dl class="design">
+    <div><dt>Colour</dt><dd>White, black (#0A0A0A) and greys, with safety yellow (#FFD500) used only as a highlight bar and on the primary button with black text. Nothing else is coloured.</dd></div>
+    <div><dt>Type and sizes</dt><dd>Public Sans only: 700 headlines at 40 to 68px with tight tracking, 400 body at 17px, small uppercase labels with wide tracking. Tabular numerals everywhere.</dd></div>
+    <div><dt>Layout</dt><dd>Hero split between a headline and a numbered index of the offer (01 install, 02 PPA, 03 aftercare). Sections separated by single rules. Numbers lined up in columns.</dd></div>
+    <div><dt>Through a customer’s eyes</dt><dd>Exact, serious, uncluttered. The eye goes straight to the numbers.</dd></div>
+  </dl>
+  <details class="more"><summary>Why it is in the set, what it borrows, and the risk</summary><div class="meta"><div><b>Who it is for.</b> Architects, property developers and professional clients who respect precision and dislike decoration.</div><div><b>Why.</b> The Swiss style (strict grid, one sans, big numbers, one accent) is what engineering consultancies like Arup and Hoare Lea reach for when they want to look exact. Solex’s offer is unusually simple (two routes, four sizes, six steps), and a grid layout makes that simplicity visible. Yellow is used the way it is used on site: as a marker, not a colour scheme.</div><div><b>Borrowed from.</b> Arup and Hoare Lea restraint; Spirit Energy numbered finance structure; Onyx typographic hierarchy.</div><div><b>Risk.</b> Austere. Some owner-managers will find it cold. It depends on copy and numbers being exactly right.</div></div></details>
+</section>
+  <section class="block" id="shortlist">
+    <h2>Designer’s shortlist</h2>
+    <p class="lede">All twenty do the job. Judged purely on how easily a commercial customer understands the offer and feels able to make contact, these five lead, and the rest are explained in each card.</p>
+    <ol class="short"><li><span class="l">G</span><div><b>Price Up Front</b><p>The clearest answer to “what will it cost me?”, the question every commercial visitor arrives with. The price guide, reviews strip and three steps mirror what made BOXT and Heatable market leaders.</p></div></li><li><span class="l">N</span><div><b>Bank Clean</b><p>The Buy / PPA toggle answers the second question (“which route?”) without reading. Very legible, one accent, nothing to learn.</p></div></li><li><span class="l">A</span><div><b>Straight Talk</b><p>The best fit for owner-managers: the people are visible first, the qualifications second, the price third.</p></div></li><li><span class="l">B</span><div><b>The Funder</b><p>The one a finance director forwards to the board. The term sheet in the hero makes the self-funded PPA the story.</p></div></li><li><span class="l">M</span><div><b>Local Trades</b><p>The easiest to ring. Bigger type, a phone number on every screen, and nothing that needs explaining.</p></div></li></ol>
+    <div class="rec"><h3>If one has to be built first</h3><p>Take G’s structure (price guide, reviews strip, three steps) and drop N’s Buy / PPA toggle into its hero. Palette is then a brand decision: A’s navy and amber if you want to look like a firm of tradesmen, B’s green and gold if you want to look like the funder. Both pass contrast and both work with no photographs.</p><p class="small">L (Minimal Photo) and P (Photo Premium) need real photographs and should wait for the first installs. C (Engineering Grid) and J (Black &amp; Signal) read as serious but dark body text tires older readers; O keeps the engineering story on white. T (Swiss Grid) is handsome and austere, better for architects than farmers. Q (Farm &amp; Rural) is a sector landing page rather than a company look.</p></div>
+  </section>
+  <section class="block" id="refs2">
+    <div class="refs-head"><h2>What is already working out there</h2><span class="small">26 sites captured 1 October 2026, desktop first screen. Tap for the live site.</span></div>
+    <p class="lede">Energy, trades, construction and finance brands whose homepages are easy on the eye and clear about the offer. Each note says what it does well and which Solex treatment borrows the idea. Their words, photos and code are theirs; only the patterns are reused.</p>
+    <div class="refs"><a class="ref" href="https://octopus.energy/business/" target="_blank" rel="noopener"><img src="gallery/refs2/octopus-business.jpg" alt="" loading="lazy"><span class="t">octopus.energy/business</span><span class="n">Deep purple, a postcode box and one button. A friendly consumer brand whose business page still asks for one thing. Tone borrowed in F.</span></a><a class="ref" href="https://www.heatable.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/heatable.jpg" alt="" loading="lazy"><span class="t">heatable.co.uk</span><span class="n">Pale green hero with six product tiles, each showing “From £…”. Prices on the first screen remove the biggest reason not to enquire. Borrowed in G.</span></a><a class="ref" href="https://www.boxt.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/boxt.jpg" alt="" loading="lazy"><span class="t">boxt.co.uk</span><span class="n">Dark navy hero, a white card with one coral button, and the Trustpilot score right under the fold. The clearest “get a fixed price” pattern in UK home services. Borrowed in G.</span></a><a class="ref" href="https://www.sunsave.energy/" target="_blank" rel="noopener"><img src="gallery/refs2/sunsave.jpg" alt="" loading="lazy"><span class="t">sunsave.energy</span><span class="n">Mint-to-white gradient, one centred headline, a yellow pill button, a row of trust logos. Calm and confident; nothing to decode.</span></a><a class="ref" href="https://www.enpal.de/" target="_blank" rel="noopener"><img src="gallery/refs2/enpal.jpg" alt="" loading="lazy"><span class="t">enpal.de</span><span class="n">Full-bleed photo with three ticks along the bottom edge (0 € up front, save, independent). Germany’s largest installer sells on three promises.</span></a><a class="ref" href="https://www.otovo.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/otovo.jpg" alt="" loading="lazy"><span class="t">otovo.co.uk</span><span class="n">A saving in the headline, a postcode box, a diagonal photo crop. Note that “up to 90%” claims need substantiation under UK advertising rules.</span></a><a class="ref" href="https://enphase.com/en-gb" target="_blank" rel="noopener"><img src="gallery/refs2/enphase.jpg" alt="" loading="lazy"><span class="t">enphase.com/en-gb</span><span class="n">Photo with centred white type and two buttons. The lesson is restraint and one orange action. Borrowed in I and S.</span></a><a class="ref" href="https://www.starlingbank.com/business-account/" target="_blank" rel="noopener"><img src="gallery/refs2/starling-business.jpg" alt="" loading="lazy"><span class="t">starlingbank.com/business-account</span><span class="n">Dark aubergine, the product centred, one teal button, trust badges in a row at the bottom. One accent and nothing else. Discipline borrowed in N.</span></a><a class="ref" href="https://monzo.com/business/" target="_blank" rel="noopener"><img src="gallery/refs2/monzo-business.jpg" alt="" loading="lazy"><span class="t">monzo.com/business</span><span class="n">Hot orange-to-coral gradient with a photo cut-out and one teal button. Warm gradients work for business audiences when everything else stays plain. Borrowed in S.</span></a><a class="ref" href="https://www.eocharging.com/" target="_blank" rel="noopener"><img src="gallery/refs2/eo-charging.jpg" alt="" loading="lazy"><span class="t">eocharging.com</span><span class="n">Dense B2B layout: stats, service tiles and a package card all in the hero. Too busy for Solex, but a fair example of showing scope.</span></a><a class="ref" href="https://www.checkatrade.com/" target="_blank" rel="noopener"><img src="gallery/refs2/checkatrade.jpg" alt="" loading="lazy"><span class="t">checkatrade.com</span><span class="n">Red hero, category chips, three trust badges beneath. The visual language UK customers associate with vetted trades. Borrowed in M.</span></a><a class="ref" href="https://www.hometree.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/hometree.jpg" alt="" loading="lazy"><span class="t">hometree.co.uk</span><span class="n">Yellow hero with a Trustpilot strip and four guarantee tiles immediately under it. Reviews and guarantees before anything else. Borrowed in M.</span></a><a class="ref" href="https://www.kensaheatpumps.com/" target="_blank" rel="noopener"><img src="gallery/refs2/kensa.jpg" alt="" loading="lazy"><span class="t">kensaheatpumps.com</span><span class="n">Orange gradient over a product photo, one line, one button. The warm, product-led heat pump look. Borrowed in S.</span></a><a class="ref" href="https://www.hoarelea.com/" target="_blank" rel="noopener"><img src="gallery/refs2/hoarelea.jpg" alt="" loading="lazy"><span class="t">hoarelea.com</span><span class="n">An engineering consultancy with illustration and a single headline; the body of the site is strict and technical. Restraint borrowed in O and T.</span></a><a class="ref" href="https://www.willmottdixon.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/willmottdixon.jpg" alt="" loading="lazy"><span class="t">willmottdixon.co.uk</span><span class="n">Full-bleed aerial photo, yellow headline, white sub-line. The construction-firm pattern: let the work speak. The target for P.</span></a><a class="ref" href="https://www.sunrun.com/" target="_blank" rel="noopener"><img src="gallery/refs2/sunrun.jpg" alt="" loading="lazy"><span class="t">sunrun.com</span><span class="n">Cream background, a product mock-up, three ticks. The US residential leader; clean, if unremarkable.</span></a><a class="ref" href="https://www.zolar.de/" target="_blank" rel="noopener"><img src="gallery/refs2/zolar.jpg" alt="" loading="lazy"><span class="t">zolar.de</span><span class="n">Photo hero with three icon tiles beneath: experienced trades, local expertise, tailored offers. A German installer marketplace.</span></a><a class="ref" href="https://www.inspiredplc.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/inspired.jpg" alt="" loading="lazy"><span class="t">inspiredplc.co.uk</span><span class="n">Dark photographic hero, a one-line promise, a quiet button. The energy-consultancy look corporate buyers expect. Borrowed in J.</span></a><a class="ref" href="https://www.zenergi.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/zenergi.jpg" alt="" loading="lazy"><span class="t">zenergi.co.uk</span><span class="n">Dark green with an orange arch framing a person. A brand device plus a human face, in the same family as Eden Sustainable. Borrowed in D.</span></a><a class="ref" href="https://www.tide.co/" target="_blank" rel="noopener"><img src="gallery/refs2/tide.jpg" alt="" loading="lazy"><span class="t">tide.co</span><span class="n">Saturated blue, a real customer with a quote, Trustpilot and badges in one row. Challenger-bank clarity for small businesses.</span></a><a class="ref" href="https://gocardless.com/" target="_blank" rel="noopener"><img src="gallery/refs2/gocardless.jpg" alt="" loading="lazy"><span class="t">gocardless.com</span><span class="n">White, centred headline, two buttons, a photo beneath. The cleanest B2B hero in the set. Borrowed in I and N.</span></a><a class="ref" href="https://wise.com/gb/business/" target="_blank" rel="noopener"><img src="gallery/refs2/wise-business.jpg" alt="" loading="lazy"><span class="t">wise.com/gb/business</span><span class="n">Dark green with a huge uppercase condensed headline and one pale button. Bold type as the whole design. Borrowed in J.</span></a><a class="ref" href="https://mcscertified.com/" target="_blank" rel="noopener"><img src="gallery/refs2/mcs.jpg" alt="" loading="lazy"><span class="t">mcscertified.com</span><span class="n">The certification body’s own site: a big photo and black panels for each audience. Its badge is what Solex adds after the November assessment.</span></a><a class="ref" href="https://www.vaillant.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/vaillant.jpg" alt="" loading="lazy"><span class="t">vaillant.co.uk</span><span class="n">Conventional manufacturer layout: headline, product photo, three task tiles. Familiar to facilities buyers. Borrowed in R.</span></a><a class="ref" href="https://www.segen.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/segen.jpg" alt="" loading="lazy"><span class="t">segen.co.uk</span><span class="n">Diagonal photo crop, bold headline, two coloured buttons. A UK distributor showing the trade vernacular.</span></a><a class="ref" href="https://www.nakedenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs2/naked-energy.jpg" alt="" loading="lazy"><span class="t">nakedenergy.co.uk</span><span class="n">A near-empty hero, “Solar Redefined”, one link, then a photograph. Minimalism from a UK solar manufacturer. Borrowed in L.</span></a></div>
+    <p class="small">Blocked or unavailable when captured: 1KOMMA5°, Aira, Arup, Heat Geek, Tesla Solar, SolarEdge, Pod Point and IKEA Solar. Their patterns are described from earlier visits where a treatment cites them.</p>
   </section>
   <section class="block" id="refs">
-    <div class="refs-head"><h2>Reference sites, captured 28 September to 1 October 2026</h2><span class="small">50 pages, desktop first screen. Tap a thumbnail for the live site.</span></div>
-    <p class="lede">These are the UK and international pages the directions borrow from. They are here for comparison only: their words, photos and code belong to their owners and nothing from them is copied into the Solex mockups.</p>
-    <h3>United Kingdom</h3>
-    <div class="refs"><a class="ref" href="https://excelenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/excel-home.jpg" alt="" loading="lazy"><span class="t">excel · home</span><span class="u">excelenergy.co.uk/</span></a><a class="ref" href="https://excelenergy.co.uk/commercial-solar-financing/" target="_blank" rel="noopener"><img src="gallery/refs/excel-financing.jpg" alt="" loading="lazy"><span class="t">excel · financing</span><span class="u">excelenergy.co.uk/commercial-solar-financing/</span></a><a class="ref" href="https://excelenergy.co.uk/renewable-energy-solutions/accreditations/" target="_blank" rel="noopener"><img src="gallery/refs/excel-accreditations.jpg" alt="" loading="lazy"><span class="t">excel · accreditations</span><span class="u">excelenergy.co.uk/renewable-energy-solutions/accreditations/</span></a><a class="ref" href="https://ecoaim.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-home.jpg" alt="" loading="lazy"><span class="t">ecoaim · home</span><span class="u">ecoaim.co.uk/</span></a><a class="ref" href="https://ecoaim.co.uk/process/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-process.jpg" alt="" loading="lazy"><span class="t">ecoaim · process</span><span class="u">ecoaim.co.uk/process/</span></a><a class="ref" href="https://ecoaim.co.uk/blog/funding-solar-with-ppa-uk/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-ppa-article.jpg" alt="" loading="lazy"><span class="t">ecoaim · ppa · article</span><span class="u">ecoaim.co.uk/blog/funding-solar-with-ppa-uk/</span></a><a class="ref" href="https://www.spiritenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/spirit-home.jpg" alt="" loading="lazy"><span class="t">spirit · home</span><span class="u">spiritenergy.co.uk/</span></a><a class="ref" href="https://www.spiritenergy.co.uk/finance" target="_blank" rel="noopener"><img src="gallery/refs/spirit-finance.jpg" alt="" loading="lazy"><span class="t">spirit · finance</span><span class="u">spiritenergy.co.uk/finance</span></a><a class="ref" href="https://www.spiritenergy.co.uk/ppa-solar" target="_blank" rel="noopener"><img src="gallery/refs/spirit-ppa.jpg" alt="" loading="lazy"><span class="t">spirit · ppa</span><span class="u">spiritenergy.co.uk/ppa-solar</span></a><a class="ref" href="https://www.photonenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/photon-home.jpg" alt="" loading="lazy"><span class="t">photon · home</span><span class="u">photonenergy.co.uk/</span></a><a class="ref" href="https://www.photonenergy.co.uk/power-purchase-agreement" target="_blank" rel="noopener"><img src="gallery/refs/photon-ppa.jpg" alt="" loading="lazy"><span class="t">photon · ppa</span><span class="u">photonenergy.co.uk/power-purchase-agreement</span></a><a class="ref" href="https://www.absolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/absolar-home.jpg" alt="" loading="lazy"><span class="t">absolar · home</span><span class="u">absolar.co.uk/</span></a><a class="ref" href="https://www.edensustainable.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/eden-home.jpg" alt="" loading="lazy"><span class="t">eden · home</span><span class="u">edensustainable.co.uk/</span></a><a class="ref" href="https://www.edensustainable.co.uk/solar-ppa" target="_blank" rel="noopener"><img src="gallery/refs/eden-ppa.jpg" alt="" loading="lazy"><span class="t">eden · ppa</span><span class="u">edensustainable.co.uk/solar-ppa</span></a><a class="ref" href="https://www.geogreenpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/geogreen-home.jpg" alt="" loading="lazy"><span class="t">geogreen · home</span><span class="u">geogreenpower.com/</span></a><a class="ref" href="https://www.harvestgreendevelopments.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/harvestgreen-home.jpg" alt="" loading="lazy"><span class="t">harvestgreen · home</span><span class="u">harvestgreendevelopments.co.uk/</span></a><a class="ref" href="https://evoenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/evoenergy-home.jpg" alt="" loading="lazy"><span class="t">evoenergy · home</span><span class="u">evoenergy.co.uk/</span></a><a class="ref" href="https://perfectsenseenergy.com/" target="_blank" rel="noopener"><img src="gallery/refs/perfectsense-home.jpg" alt="" loading="lazy"><span class="t">perfectsense · home</span><span class="u">perfectsenseenergy.com/</span></a><a class="ref" href="https://www.gbnrg.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/gbnrg-home.jpg" alt="" loading="lazy"><span class="t">gbnrg · home</span><span class="u">gbnrg.co.uk/</span></a><a class="ref" href="https://olympuspower.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/olympus-home.jpg" alt="" loading="lazy"><span class="t">olympus · home</span><span class="u">olympuspower.co.uk/</span></a><a class="ref" href="https://olympuspower.co.uk/finance-options/" target="_blank" rel="noopener"><img src="gallery/refs/olympus-finance.jpg" alt="" loading="lazy"><span class="t">olympus · finance</span><span class="u">olympuspower.co.uk/finance-options/</span></a><a class="ref" href="https://www.jojusolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/joju-home.jpg" alt="" loading="lazy"><span class="t">joju · home</span><span class="u">jojusolar.co.uk/</span></a><a class="ref" href="https://www.customsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/customsolar-home.jpg" alt="" loading="lazy"><span class="t">customsolar · home</span><span class="u">customsolar.co.uk/</span></a><a class="ref" href="https://solarsense-uk.com/" target="_blank" rel="noopener"><img src="gallery/refs/solarsense-home.jpg" alt="" loading="lazy"><span class="t">solarsense · home</span><span class="u">solarsense-uk.com/</span></a><a class="ref" href="https://www.mypower.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/mypower-home.jpg" alt="" loading="lazy"><span class="t">mypower · home</span><span class="u">mypower.co.uk/</span></a><a class="ref" href="https://nakedsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/nakedsolar-home.jpg" alt="" loading="lazy"><span class="t">nakedsolar · home</span><span class="u">nakedsolar.co.uk/</span></a><a class="ref" href="https://www.sungiftsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/sungift-home.jpg" alt="" loading="lazy"><span class="t">sungift · home</span><span class="u">sungiftsolar.co.uk/</span></a></div>
-    <h3>Ireland, Australia, North America and Europe</h3>
-    <div class="refs"><a class="ref" href="https://selectelectricalonline.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/select-home.jpg" alt="" loading="lazy"><span class="t">select · home</span><span class="u">selectelectricalonline.com.au/</span></a><a class="ref" href="https://selectelectricalonline.com.au/commercial-solar-ppa/" target="_blank" rel="noopener"><img src="gallery/refs/select-ppa.jpg" alt="" loading="lazy"><span class="t">select · ppa</span><span class="u">selectelectricalonline.com.au/commercial-solar-ppa/</span></a><a class="ref" href="https://www.sunpeakpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/sunpeak-home.jpg" alt="" loading="lazy"><span class="t">sunpeak · home</span><span class="u">sunpeakpower.com/</span></a><a class="ref" href="https://aei.ie/commercial/" target="_blank" rel="noopener"><img src="gallery/refs/aei-commercial.jpg" alt="" loading="lazy"><span class="t">aei · commercial</span><span class="u">aei.ie/commercial/</span></a><a class="ref" href="https://www.fortenergy.ie/" target="_blank" rel="noopener"><img src="gallery/refs/fort-home.jpg" alt="" loading="lazy"><span class="t">fort · home</span><span class="u">fortenergy.ie/</span></a><a class="ref" href="https://www.todaesolar.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/todae-home.jpg" alt="" loading="lazy"><span class="t">todae · home</span><span class="u">todaesolar.com.au/</span></a><a class="ref" href="https://www.todaesolar.com.au/commercial-solar-systems/100kw-solar/" target="_blank" rel="noopener"><img src="gallery/refs/todae-100kw.jpg" alt="" loading="lazy"><span class="t">todae · 100kw</span><span class="u">todaesolar.com.au/commercial-solar-systems/100kw-solar/</span></a><a class="ref" href="https://vctgroup.com/commercial-solar" target="_blank" rel="noopener"><img src="gallery/refs/vct-commercial.jpg" alt="" loading="lazy"><span class="t">vct · commercial</span><span class="u">vctgroup.com/commercial-solar</span></a><a class="ref" href="https://solar-x.ca/commercial" target="_blank" rel="noopener"><img src="gallery/refs/solarx-commercial.jpg" alt="" loading="lazy"><span class="t">solarx · commercial</span><span class="u">solar-x.ca/commercial</span></a><a class="ref" href="https://solar-x.ca/commercial/solar-financing" target="_blank" rel="noopener"><img src="gallery/refs/solarx-financing.jpg" alt="" loading="lazy"><span class="t">solarx · financing</span><span class="u">solar-x.ca/commercial/solar-financing</span></a><a class="ref" href="https://www.smartcommercialenergy.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/smartcommercial-home.jpg" alt="" loading="lazy"><span class="t">smartcommercial · home</span><span class="u">smartcommercialenergy.com.au/</span></a><a class="ref" href="https://www.veepenergy.ie/" target="_blank" rel="noopener"><img src="gallery/refs/veep-home.jpg" alt="" loading="lazy"><span class="t">veep · home</span><span class="u">veepenergy.ie/</span></a><a class="ref" href="https://alectricrenewables.com/" target="_blank" rel="noopener"><img src="gallery/refs/alectric-home.jpg" alt="" loading="lazy"><span class="t">alectric · home</span><span class="u">alectricrenewables.com/</span></a><a class="ref" href="https://www.elitevinsolar.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/elitevin-home.jpg" alt="" loading="lazy"><span class="t">elitevin · home</span><span class="u">elitevinsolar.com.au/</span></a><a class="ref" href="https://www.onyxrenewables.com/" target="_blank" rel="noopener"><img src="gallery/refs/onyx-home.jpg" alt="" loading="lazy"><span class="t">onyx · home</span><span class="u">onyxrenewables.com/</span></a><a class="ref" href="https://enviria.energy/en" target="_blank" rel="noopener"><img src="gallery/refs/enviria-home.jpg" alt="" loading="lazy"><span class="t">enviria · home</span><span class="u">enviria.energy/en</span></a><a class="ref" href="https://www.forefrontpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/forefront-home.jpg" alt="" loading="lazy"><span class="t">forefront · home</span><span class="u">forefrontpower.com/</span></a><a class="ref" href="https://www.nexamp.com/" target="_blank" rel="noopener"><img src="gallery/refs/nexamp-home.jpg" alt="" loading="lazy"><span class="t">nexamp · home</span><span class="u">nexamp.com/</span></a><a class="ref" href="https://www.namastesolar.com/" target="_blank" rel="noopener"><img src="gallery/refs/namaste-home.jpg" alt="" loading="lazy"><span class="t">namaste · home</span><span class="u">namastesolar.com/</span></a><a class="ref" href="https://sunrock.com/en/" target="_blank" rel="noopener"><img src="gallery/refs/sunrock-home.jpg" alt="" loading="lazy"><span class="t">sunrock · home</span><span class="u">sunrock.com/en/</span></a><a class="ref" href="https://www.solarlandscape.com/" target="_blank" rel="noopener"><img src="gallery/refs/solarlandscape-home.jpg" alt="" loading="lazy"><span class="t">solarlandscape · home</span><span class="u">solarlandscape.com/</span></a><a class="ref" href="https://www.sunwealth.com/" target="_blank" rel="noopener"><img src="gallery/refs/sunwealth-home.jpg" alt="" loading="lazy"><span class="t">sunwealth · home</span><span class="u">sunwealth.com/</span></a><a class="ref" href="https://voltasolar.com/" target="_blank" rel="noopener"><img src="gallery/refs/voltasolar-home.jpg" alt="" loading="lazy"><span class="t">voltasolar · home</span><span class="u">voltasolar.com/</span></a></div>
+    <details class="wall"><summary>Solar reference sites from the research (50 pages)</summary><div>
+    <p class="lede">The UK and international solar pages the original five directions borrow from, captured 28 September to 1 October 2026.</p>
+    <div class="refs"><a class="ref" href="https://excelenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/excel-home.jpg" alt="" loading="lazy"><span class="t">excel · home</span><span class="u">excelenergy.co.uk</span></a><a class="ref" href="https://excelenergy.co.uk/commercial-solar-financing/" target="_blank" rel="noopener"><img src="gallery/refs/excel-financing.jpg" alt="" loading="lazy"><span class="t">excel · financing</span><span class="u">excelenergy.co.uk/commercial-solar-financing</span></a><a class="ref" href="https://excelenergy.co.uk/renewable-energy-solutions/accreditations/" target="_blank" rel="noopener"><img src="gallery/refs/excel-accreditations.jpg" alt="" loading="lazy"><span class="t">excel · accreditations</span><span class="u">excelenergy.co.uk/renewable-energy-solutions/accreditations</span></a><a class="ref" href="https://ecoaim.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-home.jpg" alt="" loading="lazy"><span class="t">ecoaim · home</span><span class="u">ecoaim.co.uk</span></a><a class="ref" href="https://ecoaim.co.uk/process/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-process.jpg" alt="" loading="lazy"><span class="t">ecoaim · process</span><span class="u">ecoaim.co.uk/process</span></a><a class="ref" href="https://ecoaim.co.uk/blog/funding-solar-with-ppa-uk/" target="_blank" rel="noopener"><img src="gallery/refs/ecoaim-ppa-article.jpg" alt="" loading="lazy"><span class="t">ecoaim · ppa · article</span><span class="u">ecoaim.co.uk/blog/funding-solar-with-ppa-uk</span></a><a class="ref" href="https://www.spiritenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/spirit-home.jpg" alt="" loading="lazy"><span class="t">spirit · home</span><span class="u">spiritenergy.co.uk</span></a><a class="ref" href="https://www.spiritenergy.co.uk/finance" target="_blank" rel="noopener"><img src="gallery/refs/spirit-finance.jpg" alt="" loading="lazy"><span class="t">spirit · finance</span><span class="u">spiritenergy.co.uk/finance</span></a><a class="ref" href="https://www.spiritenergy.co.uk/ppa-solar" target="_blank" rel="noopener"><img src="gallery/refs/spirit-ppa.jpg" alt="" loading="lazy"><span class="t">spirit · ppa</span><span class="u">spiritenergy.co.uk/ppa-solar</span></a><a class="ref" href="https://www.photonenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/photon-home.jpg" alt="" loading="lazy"><span class="t">photon · home</span><span class="u">photonenergy.co.uk</span></a><a class="ref" href="https://www.photonenergy.co.uk/power-purchase-agreement" target="_blank" rel="noopener"><img src="gallery/refs/photon-ppa.jpg" alt="" loading="lazy"><span class="t">photon · ppa</span><span class="u">photonenergy.co.uk/power-purchase-agreement</span></a><a class="ref" href="https://www.absolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/absolar-home.jpg" alt="" loading="lazy"><span class="t">absolar · home</span><span class="u">absolar.co.uk</span></a><a class="ref" href="https://www.edensustainable.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/eden-home.jpg" alt="" loading="lazy"><span class="t">eden · home</span><span class="u">edensustainable.co.uk</span></a><a class="ref" href="https://www.edensustainable.co.uk/solar-ppa" target="_blank" rel="noopener"><img src="gallery/refs/eden-ppa.jpg" alt="" loading="lazy"><span class="t">eden · ppa</span><span class="u">edensustainable.co.uk/solar-ppa</span></a><a class="ref" href="https://www.geogreenpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/geogreen-home.jpg" alt="" loading="lazy"><span class="t">geogreen · home</span><span class="u">geogreenpower.com</span></a><a class="ref" href="https://www.harvestgreendevelopments.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/harvestgreen-home.jpg" alt="" loading="lazy"><span class="t">harvestgreen · home</span><span class="u">harvestgreendevelopments.co.uk</span></a><a class="ref" href="https://evoenergy.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/evoenergy-home.jpg" alt="" loading="lazy"><span class="t">evoenergy · home</span><span class="u">evoenergy.co.uk</span></a><a class="ref" href="https://perfectsenseenergy.com/" target="_blank" rel="noopener"><img src="gallery/refs/perfectsense-home.jpg" alt="" loading="lazy"><span class="t">perfectsense · home</span><span class="u">perfectsenseenergy.com</span></a><a class="ref" href="https://www.gbnrg.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/gbnrg-home.jpg" alt="" loading="lazy"><span class="t">gbnrg · home</span><span class="u">gbnrg.co.uk</span></a><a class="ref" href="https://olympuspower.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/olympus-home.jpg" alt="" loading="lazy"><span class="t">olympus · home</span><span class="u">olympuspower.co.uk</span></a><a class="ref" href="https://olympuspower.co.uk/finance-options/" target="_blank" rel="noopener"><img src="gallery/refs/olympus-finance.jpg" alt="" loading="lazy"><span class="t">olympus · finance</span><span class="u">olympuspower.co.uk/finance-options</span></a><a class="ref" href="https://www.jojusolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/joju-home.jpg" alt="" loading="lazy"><span class="t">joju · home</span><span class="u">jojusolar.co.uk</span></a><a class="ref" href="https://www.customsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/customsolar-home.jpg" alt="" loading="lazy"><span class="t">customsolar · home</span><span class="u">customsolar.co.uk</span></a><a class="ref" href="https://solarsense-uk.com/" target="_blank" rel="noopener"><img src="gallery/refs/solarsense-home.jpg" alt="" loading="lazy"><span class="t">solarsense · home</span><span class="u">solarsense-uk.com</span></a><a class="ref" href="https://www.mypower.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/mypower-home.jpg" alt="" loading="lazy"><span class="t">mypower · home</span><span class="u">mypower.co.uk</span></a><a class="ref" href="https://nakedsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/nakedsolar-home.jpg" alt="" loading="lazy"><span class="t">nakedsolar · home</span><span class="u">nakedsolar.co.uk</span></a><a class="ref" href="https://www.sungiftsolar.co.uk/" target="_blank" rel="noopener"><img src="gallery/refs/sungift-home.jpg" alt="" loading="lazy"><span class="t">sungift · home</span><span class="u">sungiftsolar.co.uk</span></a><a class="ref" href="https://selectelectricalonline.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/select-home.jpg" alt="" loading="lazy"><span class="t">select · home</span><span class="u">selectelectricalonline.com.au</span></a><a class="ref" href="https://selectelectricalonline.com.au/commercial-solar-ppa/" target="_blank" rel="noopener"><img src="gallery/refs/select-ppa.jpg" alt="" loading="lazy"><span class="t">select · ppa</span><span class="u">selectelectricalonline.com.au/commercial-solar-ppa</span></a><a class="ref" href="https://www.sunpeakpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/sunpeak-home.jpg" alt="" loading="lazy"><span class="t">sunpeak · home</span><span class="u">sunpeakpower.com</span></a><a class="ref" href="https://aei.ie/commercial/" target="_blank" rel="noopener"><img src="gallery/refs/aei-commercial.jpg" alt="" loading="lazy"><span class="t">aei · commercial</span><span class="u">aei.ie/commercial</span></a><a class="ref" href="https://www.fortenergy.ie/" target="_blank" rel="noopener"><img src="gallery/refs/fort-home.jpg" alt="" loading="lazy"><span class="t">fort · home</span><span class="u">fortenergy.ie</span></a><a class="ref" href="https://www.todaesolar.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/todae-home.jpg" alt="" loading="lazy"><span class="t">todae · home</span><span class="u">todaesolar.com.au</span></a><a class="ref" href="https://www.todaesolar.com.au/commercial-solar-systems/100kw-solar/" target="_blank" rel="noopener"><img src="gallery/refs/todae-100kw.jpg" alt="" loading="lazy"><span class="t">todae · 100kw</span><span class="u">todaesolar.com.au/commercial-solar-systems/100kw-solar</span></a><a class="ref" href="https://vctgroup.com/commercial-solar" target="_blank" rel="noopener"><img src="gallery/refs/vct-commercial.jpg" alt="" loading="lazy"><span class="t">vct · commercial</span><span class="u">vctgroup.com/commercial-solar</span></a><a class="ref" href="https://solar-x.ca/commercial" target="_blank" rel="noopener"><img src="gallery/refs/solarx-commercial.jpg" alt="" loading="lazy"><span class="t">solarx · commercial</span><span class="u">solar-x.ca/commercial</span></a><a class="ref" href="https://solar-x.ca/commercial/solar-financing" target="_blank" rel="noopener"><img src="gallery/refs/solarx-financing.jpg" alt="" loading="lazy"><span class="t">solarx · financing</span><span class="u">solar-x.ca/commercial/solar-financing</span></a><a class="ref" href="https://www.smartcommercialenergy.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/smartcommercial-home.jpg" alt="" loading="lazy"><span class="t">smartcommercial · home</span><span class="u">smartcommercialenergy.com.au</span></a><a class="ref" href="https://www.veepenergy.ie/" target="_blank" rel="noopener"><img src="gallery/refs/veep-home.jpg" alt="" loading="lazy"><span class="t">veep · home</span><span class="u">veepenergy.ie</span></a><a class="ref" href="https://alectricrenewables.com/" target="_blank" rel="noopener"><img src="gallery/refs/alectric-home.jpg" alt="" loading="lazy"><span class="t">alectric · home</span><span class="u">alectricrenewables.com</span></a><a class="ref" href="https://www.elitevinsolar.com.au/" target="_blank" rel="noopener"><img src="gallery/refs/elitevin-home.jpg" alt="" loading="lazy"><span class="t">elitevin · home</span><span class="u">elitevinsolar.com.au</span></a><a class="ref" href="https://www.onyxrenewables.com/" target="_blank" rel="noopener"><img src="gallery/refs/onyx-home.jpg" alt="" loading="lazy"><span class="t">onyx · home</span><span class="u">onyxrenewables.com</span></a><a class="ref" href="https://enviria.energy/en" target="_blank" rel="noopener"><img src="gallery/refs/enviria-home.jpg" alt="" loading="lazy"><span class="t">enviria · home</span><span class="u">enviria.energy/en</span></a><a class="ref" href="https://www.forefrontpower.com/" target="_blank" rel="noopener"><img src="gallery/refs/forefront-home.jpg" alt="" loading="lazy"><span class="t">forefront · home</span><span class="u">forefrontpower.com</span></a><a class="ref" href="https://www.nexamp.com/" target="_blank" rel="noopener"><img src="gallery/refs/nexamp-home.jpg" alt="" loading="lazy"><span class="t">nexamp · home</span><span class="u">nexamp.com</span></a><a class="ref" href="https://www.namastesolar.com/" target="_blank" rel="noopener"><img src="gallery/refs/namaste-home.jpg" alt="" loading="lazy"><span class="t">namaste · home</span><span class="u">namastesolar.com</span></a><a class="ref" href="https://sunrock.com/en/" target="_blank" rel="noopener"><img src="gallery/refs/sunrock-home.jpg" alt="" loading="lazy"><span class="t">sunrock · home</span><span class="u">sunrock.com/en</span></a><a class="ref" href="https://www.solarlandscape.com/" target="_blank" rel="noopener"><img src="gallery/refs/solarlandscape-home.jpg" alt="" loading="lazy"><span class="t">solarlandscape · home</span><span class="u">solarlandscape.com</span></a><a class="ref" href="https://www.sunwealth.com/" target="_blank" rel="noopener"><img src="gallery/refs/sunwealth-home.jpg" alt="" loading="lazy"><span class="t">sunwealth · home</span><span class="u">sunwealth.com</span></a><a class="ref" href="https://voltasolar.com/" target="_blank" rel="noopener"><img src="gallery/refs/voltasolar-home.jpg" alt="" loading="lazy"><span class="t">voltasolar · home</span><span class="u">voltasolar.com</span></a></div>
     <p class="small">A few pages served a bot-check or error screen when captured (Harvest Green, Mypower, Perfect Sense, Solarsense); their thumbnails show that rather than the site.</p>
+    </div></details>
   </section>
 </main>
 <script>
 (function(){
-  function fit(dev){
-    var fr=dev.querySelector('.frame'), ifr=dev.querySelector('iframe'); if(!fr||!ifr)return;
-    var w=dev.classList.contains('phone')?390:1440, h=dev.classList.contains('phone')?844:900;
-    var avail=fr.clientWidth; if(!avail)return; var s=Math.min(1,avail/w);
-    ifr.style.width=w+'px'; ifr.style.height=h+'px'; ifr.style.transform='scale('+s+')'; fr.style.height=(h*s)+'px';
-  }
-  document.querySelectorAll('.preview').forEach(function(p){
-    var btns=p.querySelectorAll('.seg button'), panes=p.querySelectorAll('[data-pane]');
-    btns.forEach(function(b){b.addEventListener('click',function(){
-      btns.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false');});
-      panes.forEach(function(pn){var on=pn.getAttribute('data-pane')===b.getAttribute('data-mode');pn.hidden=!on;if(on&&pn.classList.contains('device')){var ifr=pn.querySelector('iframe');if(ifr&&!ifr.src){ifr.src=ifr.getAttribute('data-src');}fit(pn);}});
-    });});
-  });
+  function fit(dev){var fr=dev.querySelector('.frame'),ifr=dev.querySelector('iframe');if(!fr||!ifr)return;var w=dev.classList.contains('phone')?390:1440,h=dev.classList.contains('phone')?844:900;var avail=fr.clientWidth;if(!avail)return;var s=Math.min(1,avail/w);ifr.style.width=w+'px';ifr.style.height=h+'px';ifr.style.transform='scale('+s+')';fr.style.height=(h*s)+'px';}
+  document.querySelectorAll('.preview').forEach(function(p){var btns=p.querySelectorAll('.seg button'),panes=p.querySelectorAll('[data-pane]');btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false');});panes.forEach(function(pn){var on=pn.getAttribute('data-pane')===b.getAttribute('data-mode');pn.hidden=!on;if(on&&pn.classList.contains('device')){var ifr=pn.querySelector('iframe');if(ifr&&!ifr.src){ifr.src=ifr.getAttribute('data-src');}fit(pn);}});});});});
   var ro=('ResizeObserver' in window)?new ResizeObserver(function(es){es.forEach(function(e){fit(e.target);});}):null;
   document.querySelectorAll('.device').forEach(function(d){if(ro)ro.observe(d);});
   window.addEventListener('resize',function(){document.querySelectorAll('.device').forEach(fit);});

@@ -9,6 +9,13 @@ export default {
   why: 'The research found dedicated, one-decision pages convert several times better than brochure homepages, that cutting a form to three fields lifted completions by 145% in one solar case, and that Absolar’s address-only "Check my building" is the lowest-friction first step in the UK sample. Because Solex only wants 30 to 200 kW sites with daytime load, a checker that qualifies the lead is honest as well as effective, and it works with no portfolio at all.',
   borrowed: 'Absolar assessment-first hero; Solar X bill slider and stated assumptions; SunPeak navigation of writable pages; Smart Ease eligibility thresholds.',
   risk: 'A tool-like site can over-promise if the indicative figures are not clearly labelled, and the checker needs real tariff and yield assumptions behind it.',
+  group: 'conversion',
+  design: {
+    palette: 'White with a pale grey-blue (#F2F5FA) hero, ink (#0E1B2E) type, electric blue (#1F5EFF) for the button and the checker’s selected state.',
+    type: 'Manrope throughout: 800 headlines at 36 to 58px, 400 to 600 body at 17px. One family keeps a tool-like page consistent.',
+    layout: 'Headline left, a three-question checker right with a live indicative result, then “what you get back” in three cards.',
+    eye: 'Feels like a useful tool rather than a brochure. The visitor gets an answer before they give an email address.',
+  },
   fonts: 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap',
   headerCta: 'Check my roof',
   logo,

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Commercial solar and PPA · Solex Solar · Mockup O</title>
+<meta name="description" content="Design mockup for Solex Solar, commercial solar installation and PPA, 30 to 200 kW.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:var(--display-tracking,-0.01em);font-weight:var(--display-weight,700)}
+h1{font-size:clamp(2.1rem,5.2vw,3.9rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.6rem)}
+h3{font-size:clamp(1.15rem,1.8vw,1.35rem)}
+p{margin:0}
+ul,ol{margin:0;padding:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.container{width:100%;max-width:var(--max,1180px);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.section{padding-block:clamp(56px,8vw,104px)}
+.section-tight{padding-block:clamp(36px,5vw,64px)}
+.section-head{max-width:720px;display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
+.section-head.center{margin-inline:auto;text-align:center}
+.eyebrow{font-family:var(--font-mono,var(--font-body));font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text,var(--accent));font-weight:600}
+.lede{font-size:1.15rem;color:var(--ink-2);max-width:62ch}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.note{font-size:.88rem;color:var(--muted);max-width:70ch;line-height:1.5}
+.stack{display:grid;gap:18px}
+.grid{display:grid;gap:clamp(16px,2.5vw,28px)}
+.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.cols-3,.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cols-2,.cols-3,.cols-4{grid-template-columns:minmax(0,1fr)}}
+.grid>*{min-width:0}
+.ph{display:inline;padding:0 .35em;border:1.5px dashed var(--ph-border,currentColor);border-radius:.35em;opacity:.85;font-style:normal;line-height:1.3;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.85em 1.35em;border-radius:var(--radius);font-weight:650;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.1;transition:transform .15s ease,background .15s ease,color .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-secondary{background:transparent;color:var(--ink);border-color:var(--line-strong,var(--line))}
+.btn-ghost{background:transparent;color:inherit;border-color:currentColor;opacity:.9}
+.btn-brand{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mock-bar{background:var(--mock-bg,#2b2f36);color:#fff;font:600 12px/1.4 var(--font-body);letter-spacing:.02em;padding:6px clamp(16px,4vw,32px);display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.mock-bar a{color:#fff;opacity:.8}
+.mock-bar .tag{display:inline-block;padding:1px 7px;border-radius:4px;background:rgba(255,255,255,.14);margin-right:8px}
+.site-header{position:sticky;top:0;z-index:50;background:var(--header-bg,var(--surface));color:var(--header-ink,var(--ink));border-bottom:1px solid var(--header-line,var(--line))}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:800;letter-spacing:-.01em;font-size:1.2rem;color:inherit}
+.brand svg{flex:none}
+.nav{display:flex;align-items:center;gap:6px}
+.nav ul{display:flex;gap:2px;list-style:none}
+.nav a{display:block;padding:.55em .8em;border-radius:var(--radius);text-decoration:none;font-weight:600;font-size:.95rem;opacity:.9}
+.nav a:hover,.nav a[aria-current=page]{background:var(--nav-hover,rgba(0,0,0,.06));opacity:1}
+.nav-toggle{display:none;background:transparent;border:2px solid currentColor;border-radius:var(--radius);padding:.45em .7em;font-weight:700;cursor:pointer}
+.header-cta{margin-left:8px}
+@media (max-width:960px){
+  .nav-toggle{display:inline-flex}
+  .site-header .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--header-bg,var(--surface));color:var(--header-ink,var(--ink));border-bottom:1px solid var(--header-line,var(--line));padding:12px clamp(16px,4vw,32px) 20px;flex-direction:column;align-items:stretch;gap:10px;box-shadow:0 20px 40px rgba(0,0,0,.12)}
+  .site-header.open .nav{display:flex}
+  .nav ul{flex-direction:column;gap:0}
+  .nav a{padding:.8em .6em;font-size:1.05rem;border-bottom:1px solid var(--header-line,var(--line));border-radius:0}
+  .header-cta{margin:6px 0 0;width:100%}
+}
+.page-hero{padding-block:clamp(44px,7vw,88px)}
+.page-hero .container{display:grid;gap:18px;max-width:var(--max,1180px)}
+.page-hero h1{max-width:18ch}
+.trust-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:12px;list-style:none}
+.trust-item{display:grid;gap:4px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.trust-item .k{font-weight:700;font-size:.95rem;line-height:1.2}
+.trust-item .v{font-size:.82rem;color:var(--muted);line-height:1.35}
+.trust-item.pending{opacity:.6;border-style:dashed}
+.routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,28px)}
+@media (max-width:760px){.routes{grid-template-columns:minmax(0,1fr)}}
+.route-card{display:grid;gap:16px;padding:clamp(22px,3vw,34px);border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--line);align-content:start}
+.route-card.featured{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.route-card ul{list-style:none;display:grid;gap:9px}
+.route-card li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem}
+.route-card li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.5em}
+.route-card .btn{justify-self:start}
+.steps{display:grid;gap:clamp(16px,2.5vw,24px);list-style:none;counter-reset:step}
+.steps.horizontal{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.steps.horizontal.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.steps.horizontal.n6{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:960px){.steps.horizontal.n4,.steps.horizontal.n6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.steps.horizontal.n4,.steps.horizontal.n6{grid-template-columns:minmax(0,1fr)}}
+.step{display:grid;gap:8px;padding:20px 20px 22px;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--line);counter-increment:step;position:relative}
+.step .num{font-family:var(--font-mono,var(--font-display));font-weight:700;color:var(--accent-text,var(--accent));font-size:.9rem;letter-spacing:.06em}
+.step .num::before{content:"0" counter(step)}
+.step h3{font-size:1.1rem}
+.step .meta{font-size:.82rem;color:var(--muted);font-weight:600}
+.step p{font-size:.95rem;color:var(--ink-2)}
+.sectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,2vw,22px)}
+.sectors-grid.n6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sectors-grid.n8{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:960px){.sectors-grid.n6,.sectors-grid.n8{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sectors-grid.n6,.sectors-grid.n8{grid-template-columns:minmax(0,1fr)}}
+.sector-card{display:grid;gap:10px;padding:22px;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--line);align-content:start;text-decoration:none;color:inherit}
+.sector-card h3{font-size:1.08rem}
+.sector-card p{font-size:.93rem;color:var(--ink-2)}
+.sector-card .fit{font-size:.8rem;font-weight:700;color:var(--accent-text,var(--accent));letter-spacing:.04em;text-transform:uppercase}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:640px}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+th{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+.kv{display:grid;grid-template-columns:minmax(140px,.9fr) 2fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+.kv>div{padding:13px 16px;border-bottom:1px solid var(--line);font-size:.95rem}
+.kv>div:nth-child(odd){font-weight:700;background:var(--surface-2)}
+.kv>div:nth-last-child(-n+2){border-bottom:0}
+@media (max-width:520px){.kv{grid-template-columns:minmax(0,1fr)}.kv>div:nth-child(odd){border-bottom:0;padding-bottom:4px}.kv>div:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.kv>div:last-child{border-bottom:0}}
+.checklist{list-style:none;display:grid;gap:12px}
+.checklist li{display:flex;gap:12px;align-items:flex-start}
+.checklist li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);margin-top:.1em;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' stroke='%23fff' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' stroke='%23fff' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.founders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,28px)}
+@media (max-width:600px){.founders{grid-template-columns:minmax(0,1fr)}}
+.founder{display:grid;gap:12px}
+.founder .photo{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-2)}
+.founder .photo img{width:100%;height:100%;object-fit:cover}
+.founder h3{font-size:1.15rem}
+.founder .role{font-size:.9rem;color:var(--muted);font-weight:600}
+.photo-frame{border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-2);position:relative}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-caption{position:absolute;left:12px;bottom:12px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.6);color:#fff;padding:5px 9px;border-radius:6px}
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:0 18px}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent-text,var(--accent));flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--ink-2);font-size:.97rem}
+.cta-band{background:var(--brand);color:var(--brand-ink)}
+.cta-band .container{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:860px){.cta-band .container{grid-template-columns:minmax(0,1fr)}}
+.cta-band .eyebrow{color:var(--accent)}
+.cta-band .lede{color:inherit;opacity:.9}
+.lead-form{display:grid;gap:14px;background:var(--surface);color:var(--ink);padding:clamp(20px,3vw,30px);border-radius:var(--radius-lg)}
+.lead-form .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:520px){.lead-form .row{grid-template-columns:minmax(0,1fr)}}
+.lead-form label{display:grid;gap:6px;font-size:.85rem;font-weight:700}
+.lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:.75em .85em;border:1.5px solid var(--line-strong,var(--line));border-radius:var(--radius);background:var(--bg);font-size:1rem}
+.lead-form .btn{width:100%}
+.lead-form .fine{font-size:.78rem;color:var(--muted)}
+.form-done{display:none;padding:14px 16px;border-radius:var(--radius);background:var(--surface-2);font-weight:600}
+.lead-form.sent .form-done{display:block}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+.contact-list{list-style:none;display:grid;gap:14px}
+.contact-list li{display:grid;gap:3px}
+.contact-list .k{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.contact-list .v{font-size:1.15rem;font-weight:600}
+.site-footer{background:var(--footer-bg,var(--ink));color:var(--footer-ink,#fff);padding-block:clamp(40px,6vw,64px) 28px;font-size:.92rem}
+.site-footer .container{display:grid;gap:28px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+@media (max-width:860px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.footer-grid{grid-template-columns:minmax(0,1fr)}}
+.site-footer h4{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:12px;font-family:var(--font-body)}
+.site-footer ul{list-style:none;display:grid;gap:8px}
+.site-footer a{text-decoration:none;opacity:.9}
+.site-footer a:hover{opacity:1;text-decoration:underline}
+.footer-legal{border-top:1px solid rgba(255,255,255,.14);padding-top:18px;display:grid;gap:8px;font-size:.8rem;opacity:.8}
+.about-split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:860px){.about-split{grid-template-columns:minmax(0,1fr)}}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.stat{display:grid;gap:4px;padding:16px 18px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)}
+.stat .n{font-family:var(--font-display);font-size:1.8rem;font-weight:800;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:.82rem;color:var(--muted);font-weight:600}
+.promises{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+@media (max-width:640px){.promises{grid-template-columns:minmax(0,1fr)}}
+.promise{display:grid;gap:8px;padding:20px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.promise h3{font-size:1.05rem}
+.promise p{font-size:.93rem;color:var(--ink-2)}
+.band{background:var(--surface-2)}
+.band-dark{background:var(--ink);color:#fff}
+.inline-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.inline-list li{padding:6px 12px;border-radius:999px;background:var(--surface-2);font-size:.85rem;font-weight:600;border:1px solid var(--line)}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:860px){.two-col{grid-template-columns:minmax(0,1fr)}}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:16px;top:16px;background:#fff;color:#000;padding:8px 12px;z-index:100}
+
+:root{--bg:#fff;--surface:#fff;--surface-2:#F3F6FB;--ink:#0F172A;--ink-2:#2B3A52;--muted:#5B6B86;--line:#D6DEEB;--line-strong:#B5C2D8;--brand:#1E4ED8;--brand-ink:#fff;--accent:#1E4ED8;--accent-ink:#fff;--accent-text:#1A43B8;--radius:4px;--radius-lg:8px;--font-display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;--font-body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;--font-mono:"IBM Plex Mono",Consolas,monospace;--display-weight:700;--display-tracking:0;--mock-bg:#1b2a4a;--footer-bg:#0F172A;color-scheme:light}
+h1,h2{text-transform:uppercase}
+h1{font-size:clamp(2.3rem,5.6vw,4.2rem);line-height:.98}
+.grid-bg{background-color:#fff;background-image:linear-gradient(rgba(30,78,216,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(30,78,216,.09) 1px,transparent 1px);background-size:40px 40px}
+.hero-o{border-bottom:1px solid var(--line)}
+.hero-o .container{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(48px,7vw,96px)}
+@media (max-width:900px){.hero-o .container{grid-template-columns:minmax(0,1fr)}}
+.hero-o h1 span{color:var(--accent)}
+.schem{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:10px}
+.spec-strip{border-bottom:1px solid var(--line);background:var(--surface-2)}
+.spec-strip ul{display:flex;flex-wrap:wrap;list-style:none}
+.spec-strip li{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.04em;padding:14px 18px;border-right:1px solid var(--line);color:var(--ink-2)}
+.spec-strip li b{color:var(--accent-text);font-weight:600}
+.mono{font-family:var(--font-mono)}
+.route-card{border:1px solid var(--line-strong)}
+.route-card.featured{background:var(--surface);color:var(--ink);border:2px solid var(--accent)}
+.route-card.featured .lede{color:var(--ink-2)}
+.step .num{font-family:var(--font-mono);color:var(--accent-text)}
+.trust-item .k{font-family:var(--font-mono);font-size:.85rem}
+td.num{font-family:var(--font-mono);font-size:.9rem;color:var(--accent-text)}
+.p-flow li::before{font-family:var(--font-mono)}
+.cta-band{background:var(--surface-2);color:var(--ink)}
+.cta-band .eyebrow{color:var(--accent-text)}
+.cta-band .lead-form{border:1px solid var(--line)}
+.page-hero{border-bottom:1px solid var(--line)}
+.p-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;list-style:none;counter-reset:f;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+@media (max-width:860px){.p-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.p-flow{grid-template-columns:minmax(0,1fr)}}
+.p-flow li{padding:22px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);counter-increment:f;display:grid;gap:8px;align-content:start}
+.p-flow li::before{content:"Step " counter(f);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text,var(--accent));font-weight:800}
+.p-flow h3{font-size:1.1rem}.p-flow p{font-size:.93rem;color:var(--ink-2)}.page-hero .container{grid-template-columns:1.1fr .9fr;align-items:center}
+@media (max-width:900px){.page-hero .container{grid-template-columns:minmax(0,1fr)}}
+.page-hero .photo-frame{aspect-ratio:16/10}
+.site-footer .brand span{color:#fff}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="mock-bar"><span><span class="tag">Mockup O</span>Blueprint · sample figures and placeholder photos</span><span>Switch: <a href="../a/index.html">A</a> <a href="../b/index.html">B</a> <a href="../c/index.html">C</a> <a href="../d/index.html">D</a> <a href="../e/index.html">E</a> <a href="../f/index.html">F</a> <a href="../g/index.html">G</a> <a href="../h/index.html">H</a> <a href="../i/index.html">I</a> <a href="../j/index.html">J</a> <a href="../k/index.html">K</a> <a href="../l/index.html">L</a> <a href="../m/index.html">M</a> <a href="../n/index.html">N</a> <a href="../p/index.html">P</a> <a href="../q/index.html">Q</a> <a href="../r/index.html">R</a> <a href="../s/index.html">S</a> <a href="../t/index.html">T</a> · <a href="../index.html">All five</a></span></div>
+<header class="site-header"><div class="container"><a class="brand" href="index.html" aria-label="Solex Solar home"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="3" fill="none" stroke="#1E4ED8" stroke-width="2"/><g fill="#1E4ED8"><rect x="6" y="6" width="8" height="8"/><rect x="18" y="6" width="8" height="8"/><rect x="6" y="18" width="8" height="8"/><rect x="18" y="18" width="8" height="8" opacity=".45"/></g></svg><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:.04em;font-size:1.05rem">SOLEX_SOLAR</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button><nav class="nav" id="nav"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="commercial-solar.html">Commercial solar</a></li><li><a href="ppa.html">Solar PPA</a></li><li><a href="sectors.html">Sectors</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul><a class="btn btn-primary header-cta" href="contact.html">Book a site survey</a></nav></div></header>
+<main id="main">
+
+<section class="hero-o grid-bg"><div class="container"><div class="stack" style="gap:22px"><span class="eyebrow mono">// commercial PV · 30–200 kW · <span class="ph" title="Placeholder — to be confirmed">Your region</span></span><h1>Rooftop PV, <span>engineered and installed</span> by electricians.</h1><p class="lede">30 to 200 kW commercial systems, designed to BS 7671 and BS EN 62446, G99-approved, commissioned and handed over by the two people who quoted it. Buy the system, or take it on a PPA that we fund ourselves.</p><div class="btn-row"><a class="btn btn-primary" href="contact.html">Book a site survey</a><a class="btn btn-secondary" href="ppa.html">PPA mechanism</a></div></div><svg class="schem" viewBox="0 0 560 420" role="img" aria-label="System schematic: roof array to inverter to distribution board to grid"><defs><pattern id="pvl" width="14" height="10" patternUnits="userSpaceOnUse"><rect width="13" height="9" fill="#DCE6FA" stroke="#1E4ED8" stroke-width=".8"/></pattern></defs>
+<g font-family="IBM Plex Mono, monospace" font-size="13" fill="#1A43B8">
+<polygon points="30,170 300,60 540,130 270,240" fill="url(#pvl)" stroke="#1E4ED8" stroke-width="1.5"/>
+<text x="30" y="270">ARRAY · 100 kW · 222 × 450 W</text><text x="30" y="290" fill="#5B6B86">~500 m² · 900 kWh/kW/yr</text>
+<rect x="300" y="300" width="100" height="56" rx="4" fill="#fff" stroke="#1E4ED8" stroke-width="1.5"/><text x="311" y="324">INVERTER</text><text x="311" y="344" fill="#5B6B86">3-ph · G99</text>
+<rect x="420" y="300" width="120" height="56" rx="4" fill="#fff" stroke="#5B6B86" stroke-width="1.5"/><text x="430" y="324" fill="#0F172A">DIST. BOARD</text><text x="430" y="344" fill="#5B6B86">BS 7671</text>
+<rect x="420" y="372" width="120" height="34" rx="4" fill="#fff" stroke="#5B6B86" stroke-width="1.5"/><text x="445" y="394" fill="#0F172A">GRID / DNO</text>
+<path d="M270 240 L350 300" fill="none" stroke="#1E4ED8" stroke-width="1.5" stroke-dasharray="4 4"/><path d="M400 328 L420 328" fill="none" stroke="#1E4ED8" stroke-width="1.5"/><path d="M480 356 L480 372" fill="none" stroke="#5B6B86" stroke-width="1.5"/>
+<text x="290" y="282" fill="#5B6B86">DC</text><text x="404" y="320" fill="#5B6B86" font-size="11">AC</text>
+<text x="30" y="334" fill="#0F172A" font-size="14">FIXED p/kWh ON A SOLEX PPA</text><text x="30" y="354" fill="#5B6B86" font-size="12">or owned outright · tested to BS EN 62446-1</text>
+</g></svg></div></section>
+<div class="spec-strip"><div class="container" style="padding-inline:0"><ul><li><b>SIZE</b> 30–200 kW</li><li><b>WIRING</b> BS 7671:2018+A2</li><li><b>TEST</b> BS EN 62446-1</li><li><b>GRID</b> G99 / ENA</li><li><b>SITE</b> SMSTS · IPAF · PASMA</li><li><b>FUNDING</b> CAPEX or SOLEX PPA</li></ul></div></div>
+<section class="section"><div class="container"><div class="section-head"><span class="eyebrow mono">// funding routes</span><h2>Two ways to run it</h2></div><div class="routes"><article class="route-card"><div class="stack" style="gap:8px"><h3>Buy the system outright</h3><p class="lede" style="font-size:1.02rem">You own it from day one and keep every kilowatt-hour.</p></div><ul><li>Fixed-price design and installation, 30 to 200 kW</li><li>Typical payback of 4 to 6 years on a daytime-heavy site</li><li>Capital allowances on the full cost</li><li>25-year panel warranty · <span class="ph" title="Placeholder — to be confirmed">5</span>-year workmanship warranty</li></ul><a class="btn btn-secondary" href="commercial-solar.html">See what is included</a></article><article class="route-card featured"><div class="stack" style="gap:8px"><h3>Let Solex Solar fund it</h3><p class="lede" style="font-size:1.02rem">No capital outlay. We own and maintain the system and sell you the power it makes at a fixed rate.</p></div><ul><li>We design, install, own, insure and maintain the system</li><li>You buy the solar electricity at a fixed price per kWh, below your grid tariff</li><li>Agreed term of <span class="ph" title="Placeholder — to be confirmed">e.g. 20</span> years, then the system is yours</li><li>Funded by Solex Solar directly, not a third-party finance house</li></ul><a class="btn btn-primary" href="ppa.html">How a Solex PPA works</a></article></div></div></section>
+<section class="section band"><div class="container"><div class="section-head"><span class="eyebrow mono">// PPA mechanism</span><h2>Solex funds it. You buy the output.</h2></div><ol class="p-flow"><li><h3>Survey and data check</h3><p>We survey the roof and look at your half-hourly electricity data to size a system that your site will actually use.</p></li><li><h3>We fund and install it</h3><p>Solex Solar pays for the design, equipment and installation. There is no cost to you and nothing on your balance sheet.</p></li><li><h3>You buy the solar power</h3><p>You pay only for the electricity the system generates, at a fixed price per kWh that is below what you pay the grid.</p></li><li><h3>We maintain it, then it is yours</h3><p>Monitoring, maintenance and insurance are on us for the whole term. At the end, the system transfers to you.</p></li></ol></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="eyebrow mono">// reference designs</span><h2>30 · 50 · 100 · 200 kW</h2></div><div class="table-wrap"><table><thead><tr><th>System</th><th class="num">Panels</th><th class="num">Roof area</th><th class="num">Generation / yr</th><th class="num">Saving / yr if bought</th><th class="num">Indicative cost</th><th class="num">Payback</th><th class="num">Saving / yr on a PPA</th></tr></thead><tbody><tr><td><strong>30 kW</strong></td><td class="num">67</td><td class="num">~150 m²</td><td class="num">~27,000 kWh</td><td class="num">~£5,100</td><td class="num">~£30,000</td><td class="num">5.8 yrs</td><td class="num">~£2,450</td></tr><tr><td><strong>50 kW</strong></td><td class="num">111</td><td class="num">~250 m²</td><td class="num">~45,000 kWh</td><td class="num">~£8,550</td><td class="num">~£45,000</td><td class="num">5.3 yrs</td><td class="num">~£4,100</td></tr><tr><td><strong>100 kW</strong></td><td class="num">222</td><td class="num">~500 m²</td><td class="num">~90,000 kWh</td><td class="num">~£17,100</td><td class="num">~£80,000</td><td class="num">4.7 yrs</td><td class="num">~£8,200</td></tr><tr><td><strong>200 kW</strong></td><td class="num">444</td><td class="num">~1,000 m²</td><td class="num">~180,000 kWh</td><td class="num">~£34,200</td><td class="num">~£150,000</td><td class="num">4.4 yrs</td><td class="num">~£16,400</td></tr></tbody></table></div><p class="note" style="margin-top:12px">Illustrative figures, not installed projects. Assumptions: 900 kWh per kW per year, a 25p per kWh grid rate, 70% of generation used on site, 5p per kWh export. Your proposal will be modelled on your own roof and your own half-hourly data.</p></div></section>
+<section class="section band"><div class="container"><div class="section-head"><span class="eyebrow mono">// delivery</span><h2>Survey to switch-on</h2></div><ol class="steps horizontal n6"><li class="step"><span class="num"></span><h3>Site survey</h3><span class="meta">Free · about an hour on site</span><p>We measure the roof, check the structure and the electrical intake, and take your half-hourly data away with us.</p></li><li class="step"><span class="num"></span><h3>Design and fixed-price proposal</h3><span class="meta">Within 5 working days</span><p>A modelled design with generation, savings and payback for buying, and the PPA rate if the site qualifies.</p></li><li class="step"><span class="num"></span><h3>Grid application</h3><span class="meta">Typically 4 to 10 weeks</span><p>We make the G99 application to your network operator and handle any conditions they set.</p></li><li class="step"><span class="num"></span><h3>Installation</h3><span class="meta">1 to 3 weeks on site</span><p>Our own team, with SMSTS site management, method statements and risk assessments agreed with you before we start.</p></li><li class="step"><span class="num"></span><h3>Testing, commissioning and handover</h3><span class="meta">1 to 2 days</span><p>Tested to BS EN 62446. You get the test certificates, the handover pack and monitoring on your phone.</p></li><li class="step"><span class="num"></span><h3>Aftercare</h3><span class="meta">For the life of the system</span><p>Monitoring, an annual inspection and warranty support. On a PPA, all of this is included.</p></li></ol></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="eyebrow mono">// qualifications</span><h2>What we hold</h2></div><ul class="trust-strip"><li class="trust-item"><span class="k">Qualified electricians</span><span class="v">18th Edition · BS 7671</span></li><li class="trust-item"><span class="k">SMSTS</span><span class="v">Site management safety</span></li><li class="trust-item"><span class="k">IPAF & PASMA</span><span class="v">Working at height</span></li><li class="trust-item"><span class="k">Fully insured</span><span class="v">Public liability <span class="ph" title="Placeholder — to be confirmed">£5m</span></span></li><li class="trust-item"><span class="k"><span class="ph" title="Placeholder — to be confirmed">NICEIC / NAPIT</span></span><span class="v">Registered contractor</span></li><li class="trust-item"><span class="k">3+ years commercial PV</span><span class="v"><span class="ph" title="Placeholder — to be confirmed">X</span> sites · <span class="ph" title="Placeholder — to be confirmed">Y</span> kWp</span></li><li class="trust-item pending"><span class="k">MCS</span><span class="v">Pending — assessment November 2026</span></li></ul></div></section>
+<section class="section band"><div class="container"><div class="about-split"><div class="stack"><span class="eyebrow">Who you will deal with</span><h2>Two brothers, one trade.</h2><p class="lede">Solex Solar was set up in 2026 by brothers Phil and <span class="ph" title="Placeholder — to be confirmed">Brother</span> Murray. We are qualified electricians, and for the last three years we have installed commercial rooftop solar as a subcontract team for a national installer: <span class="ph" title="Placeholder — to be confirmed">X</span> sites and <span class="ph" title="Placeholder — to be confirmed">Y</span> kWp of panels, on everything from trapezoidal warehouse roofs to flat-roof offices.</p><p class="lede" style="font-size:1.02rem">That work was carried out under other companies’ contracts, so we cannot show it as our own. What we can show you is exactly how we work, the standards we install to, and, as Solex Solar projects complete, the results.</p><div class="btn-row"><a class="btn btn-secondary" href="about.html">Meet Phil and <span class="ph" title="Placeholder — to be confirmed">Brother</span></a></div></div><div class="photo-frame "><img src="../assets/photos/team-roof-factory.jpg" alt="Installers working on a commercial roof" loading="lazy" ><span class="photo-caption">Placeholder photo</span></div></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="eyebrow mono">// FAQ</span><h2>Questions we are asked</h2></div><div class="faq"><details><summary>Do you install systems over 50 kW?</summary><p>Yes. MCS certification covers systems up to 50 kW; above that, the work is governed by BS 7671, BS EN 62446 and the G99 grid connection process, which we handle for every size we install.</p></details><details><summary>How long does the whole process take?</summary><p>Survey to switch-on is usually 8 to 16 weeks. The grid application is the slowest step, and we submit it as soon as you approve the design.</p></details><details><summary>Is my roof suitable?</summary><p>Most steel, membrane and fibre-cement commercial roofs are. We check the structure, the fixings the roof manufacturer allows, and shading. If a roof is not suitable we say so at the survey.</p></details><details><summary>Will the panels damage the roof?</summary><p>Mounting systems are specified for your exact roof profile, with the manufacturer’s fixing method, so the roof warranty is protected. We confirm this with the roofing manufacturer where needed.</p></details><details><summary>What happens on a cloudy day?</summary><p>The system generates less, and the shortfall comes from the grid as it does now. The savings in our proposals are modelled on real UK irradiance data for your postcode, cloudy days included.</p></details><details><summary>What does your workmanship warranty cover?</summary><p>Our installation work for <span class="ph" title="Placeholder — to be confirmed">5</span> years, on top of the panel and inverter manufacturers’ warranties, which we register for you.</p></details></div></div></section>
+<section class="section cta-band" id="survey"><div class="container"><div class="stack"><span class="eyebrow">Free site survey</span><h2>Find out what your roof could do</h2><p class="lede">A free site survey takes about an hour. You get a modelled proposal for buying, and the PPA rate if your site qualifies, within five working days.</p><ul class="checklist" style="margin-top:8px"><li>Survey, roof check and half-hourly data review</li><li>Fixed-price proposal within five working days</li><li>Buy or PPA, whichever suits your business</li></ul></div><form class="lead-form" novalidate>
+      <div class="row"><label for="f-name">Your name<input id="f-name" name="name" type="text" autocomplete="off"></label><label for="f-company">Company<input id="f-company" name="company" type="text" autocomplete="off"></label></div>
+      <div class="row"><label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" autocomplete="off"></label><label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="off"></label></div>
+      <div class="row"><label for="f-postcode">Site postcode<input id="f-postcode" name="postcode" type="text" autocomplete="off"></label><label for="f-spend">Monthly electricity spend<select id="f-spend" name="spend"><option>Under £1,000</option><option>£1,000 to £2,500</option><option>£2,500 to £5,000</option><option>Over £5,000</option></select></label></div>
+      <label for="f-interest">I am interested in<select id="f-interest" name="interest"><option>Buying a system</option><option>A Solex PPA</option><option>Not sure yet</option></select></label>
+      <label for="f-msg">Anything else?<textarea id="f-msg" name="message" rows="3"></textarea></label>
+      <button class="btn btn-primary" type="submit">Book a free site survey</button>
+      <p class="fine">We reply within one working day. No sales calls unless you ask for one.</p>
+      <div class="form-done" role="status"></div>
+    </form></div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html" style="color:inherit"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="3" fill="none" stroke="#9DB8FF" stroke-width="2"/><g fill="#9DB8FF"><rect x="6" y="6" width="8" height="8"/><rect x="18" y="6" width="8" height="8"/><rect x="6" y="18" width="8" height="8"/><rect x="18" y="18" width="8" height="8" opacity=".45"/></g></svg><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:.04em;font-size:1.05rem">SOLEX_SOLAR</span></a><p style="margin-top:14px;max-width:34ch;opacity:.85">Commercial rooftop solar, 30 to 200 kW, installed and funded by the people who fit it. Serving businesses across <span class="ph" title="Placeholder — to be confirmed">Your region</span>.</p></div><div><h4>Services</h4><ul><li><a href="commercial-solar.html">Commercial solar installation</a></li><li><a href="ppa.html">Solex solar PPA</a></li><li><a href="sectors.html">Sectors</a></li><li><a href="commercial-solar.html#aftercare">Monitoring and aftercare</a></li></ul></div><div><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="about.html#accreditations">Qualifications and insurance</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><h4>Contact</h4><ul><li><span class="ph" title="Placeholder — to be confirmed">01234 567 890</span></li><li><span class="ph" title="Placeholder — to be confirmed">hello@solexsolar.co.uk</span></li><li><span class="ph" title="Placeholder — to be confirmed">Your town</span>, <span class="ph" title="Placeholder — to be confirmed">Your region</span></li></ul></div></div><div class="footer-legal"><span>© <span data-year>2026</span> Solex Solar Ltd. Registered in England and Wales, <span class="ph" title="Placeholder — to be confirmed">Company No.</span>. Registered office: <span class="ph" title="Placeholder — to be confirmed">Registered office address</span>. <span class="ph" title="Placeholder — to be confirmed">VAT No.</span>.</span><span>Privacy notice · Cookies · Terms · Photographs on this mockup are licensed placeholders, not Solex Solar installations.</span></div></div></footer>
+<script>
+(function(){
+  var h=document.querySelector('.site-header');var t=document.querySelector('.nav-toggle');
+  if(t&&h){t.addEventListener('click',function(){var open=h.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+  document.querySelectorAll('form.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('sent');var d=f.querySelector('.form-done');if(d){d.textContent='Thanks. This is a design mockup, so nothing was sent. On the live site this enquiry goes straight to Phil and the team, with a reply within one working day.';}});});
+  var y=document.querySelector('[data-year]');if(y){y.textContent=new Date().getFullYear();}
+})();
+</script>
+</body>
+</html>

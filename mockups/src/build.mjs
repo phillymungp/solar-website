@@ -148,7 +148,7 @@ const pages = {
 // ---------- build ----------
 export let THEMES = [];
 export async function build() {
-  const ids = ['a', 'b', 'c', 'd', 'e'];
+  const ids = 'abcdefghijklmnopqrst'.split('');
   THEMES = [];
   for (const id of ids) THEMES.push((await import(`./themes/${id}.mjs`)).default);
   for (const t of THEMES) {
@@ -158,6 +158,6 @@ export async function build() {
     for (const [file, fn] of Object.entries(pages)) fs.writeFileSync(path.join(dir, file), fn(t));
     console.log('built', t.id, Object.keys(pages).length, 'pages');
   }
-  fs.writeFileSync(path.join(outRoot, 'directions.json'), JSON.stringify(THEMES.map(t => ({ id: t.id, name: t.name, summary: t.summary, why: t.why, persona: t.persona, borrowed: t.borrowed, risk: t.risk })), null, 2));
+  fs.writeFileSync(path.join(outRoot, 'directions.json'), JSON.stringify(THEMES.map(t => ({ id: t.id, name: t.name, group: t.group, summary: t.summary, why: t.why, persona: t.persona, borrowed: t.borrowed, risk: t.risk, design: t.design })), null, 2));
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) build();

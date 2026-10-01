@@ -9,6 +9,13 @@ export default {
   why: 'The self-funded PPA is the one thing no comparable small installer offers, and the research found the clearest PPA pages (Spirit Energy, Eden Sustainable, Solar X) win on worked examples and plain terms. This direction puts an illustrative term sheet in the hero and a comparison table on the homepage, so the financial offer is the design.',
   borrowed: 'Spirit Energy finance-page structure; Eden Sustainable PPA page order; Geo Green Power calm layout and tax-relief framing; Solar X worked example with stated assumptions.',
   risk: 'Can feel corporate for a two-brother firm. The about page and photography have to carry the human side.',
+  group: 'trust',
+  design: {
+    palette: 'Paper white (#F7F8F6), forest green (#124734) for type and buttons, gold (#C8A24A) as a thin highlight. Green and gold read as banking and land, which suits a company funding its own systems.',
+    type: 'Newsreader, a high-contrast serif, at 500 for headlines up to 70px with italic emphasis; Figtree 17px body. Serif for gravity, sans for forms and tables.',
+    layout: 'Headline left, an illustrative term sheet right, a four-fact rule line beneath, then a comparison table instead of cards.',
+    eye: 'Looks like a document a finance director would file. Calm, numerate, credible.',
+  },
   fonts: 'https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600;700&display=swap',
   headerCta: 'Request a proposal',
   logo,
